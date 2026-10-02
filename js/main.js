@@ -1,20 +1,21 @@
 // =============================================
 // PORTFOLIO - MAIN JAVASCRIPT
+// Luan A Procópio · Game Programmer
 // =============================================
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---- NAVBAR: scroll effect + hamburger ----
-  const navbar   = document.getElementById('navbar');
+  const navbar    = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('navLinks');
 
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 30);
+    navbar?.classList.toggle('scrolled', window.scrollY > 30);
   });
 
   hamburger?.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+    navLinks?.classList.toggle('open');
   });
 
   // Fecha menu ao clicar em link
@@ -23,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---- CAROUSEL ----
-  const slides      = document.querySelectorAll('.carousel-slide');
-  const thumbs      = document.querySelectorAll('.thumb');
-  const prevBtn     = document.getElementById('prevBtn');
-  const nextBtn     = document.getElementById('nextBtn');
+  const slides  = document.querySelectorAll('.carousel-slide');
+  const thumbs  = document.querySelectorAll('.thumb');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
   if (slides.length > 0) {
     let current    = 0;
@@ -34,19 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const INTERVAL = 5000; // 5 segundos por slide
 
     function goTo(index) {
-      slides[current].classList.remove('active');
+      slides[current]?.classList.remove('active');
       thumbs[current]?.classList.remove('active');
 
       current = (index + slides.length) % slides.length;
 
-      slides[current].classList.add('active');
+      slides[current]?.classList.add('active');
       thumbs[current]?.classList.add('active');
 
-      // Reinicia a barra de progresso
+      // Reinicia barra de progresso
       thumbs.forEach(t => {
         const bar = t.querySelector('.thumb-bar');
-        if (bar) bar.style.transition = 'none';
-        if (bar) bar.style.width = '0%';
+        if (bar) {
+          bar.style.transition = 'none';
+          bar.style.width = '0%';
+        }
       });
       setTimeout(() => {
         const bar = thumbs[current]?.querySelector('.thumb-bar');
@@ -80,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.carousel-main')?.addEventListener('mouseenter', stopAuto);
     document.querySelector('.carousel-main')?.addEventListener('mouseleave', startAuto);
 
-    // Touch/swipe support
+    // Touch/swipe
     let touchStartX = 0;
     document.querySelector('.carousel-main')?.addEventListener('touchstart', e => {
       touchStartX = e.changedTouches[0].clientX;
@@ -124,12 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
           const el     = entry.target;
           const target = parseInt(el.dataset.target);
           let count    = 0;
-          const step   = Math.ceil(target / 60);
+          const step   = Math.ceil(target / 40);
           const timer  = setInterval(() => {
             count = Math.min(count + step, target);
             el.textContent = count;
             if (count >= target) clearInterval(timer);
-          }, 25);
+          }, 35);
           observer.unobserve(el);
         }
       });
@@ -168,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  // Ativa lightbox em imagens/vídeos da galeria
   document.querySelectorAll('.project-gallery img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src, false));
   });
@@ -187,26 +189,27 @@ document.addEventListener('DOMContentLoaded', () => {
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type=submit]');
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
+    if (btn) {
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+    }
 
-    // Simulação visual de envio
-    await new Promise(r => setTimeout(r, 1200));
+    // Feedback visual de envio
+    await new Promise(r => setTimeout(r, 1000));
 
     form.style.display = 'none';
     if (success) success.style.display = 'block';
   });
 
   // ---- PÁGINA DE PROJETO INDIVIDUAL ----
-  // Lê parâmetros da URL para carregar dados dinamicamente
-  const urlParams   = new URLSearchParams(window.location.search);
-  const projectId   = urlParams.get('id');
+  const urlParams = new URLSearchParams(window.location.search);
+  const projectId = urlParams.get('id');
 
   if (projectId && typeof projects !== 'undefined') {
     loadProject(projectId);
   }
 
-  // ---- SCROLL REVEAL simples ----
+  // ---- SCROLL REVEAL ----
   const revealEls = document.querySelectorAll('.project-card, .skill-card, .stat-item');
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -228,89 +231,92 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // =============================================
-// DADOS DOS PROJETOS (edite aqui!)
+// DADOS DOS JOGOS & PROJETOS
 // =============================================
 const projects = {
   1: {
-    title: "Nome do Projeto 1",
-    badge: "Em Destaque",
-    category: "Web",
-    status: "Concluído",
-    year: "2024",
-    role: "Desenvolvedor de Jogos",
-    tech: ["React", "Node.js", "MongoDB", "Tailwind"],
+    title: "Past Dreams",
+    category: "Mobile",
+    status: "Disponível na Google Play",
+    year: "2023 - 2024",
+    role: "Game Programmer (Unity / C#)",
+    tech: ["Unity", "C#", "Mobile", "Google Play", "UI Systems", "Gameplay"],
     banner: "assets/images/project1-banner.jpg",
     desc: `
-      <p>Descreva seu projeto aqui. Explique a motivação, o problema que ele resolve e o impacto que causou.</p>
-      <h2>Desafios</h2>
-      <p>Quais foram os principais desafios técnicos que você enfrentou e como os resolveu?</p>
-      <h2>Resultados</h2>
-      <p>Qual foi o impacto final? Números, métricas, feedbacks.</p>
+      <p><strong>Past Dreams</strong> é um jogo mobile atmosférico e envolvente, publicado e disponível para download na Google Play Store.</p>
+      <h2>Sobre o Desenvolvimento</h2>
+      <p>Desenvolvido com a Unity engine, o projeto combinou arte estilizada, física refinada e sistemas dinâmicos de interação por toque.</p>
+      <h2>Aspectos Técnicos</h2>
+      <p>Implementação de arquitetura de código modular em C#, otimização de renderização e taxa de quadros (FPS) para smartphones Android, gerenciamento de cenas assíncrono e balanceamento de gameplay.</p>
     `,
     gallery: [
-      { type: "image", src: "assets/images/project1-screen1.jpg" },
-      { type: "image", src: "assets/images/project1-screen2.jpg" },
-      { type: "video", src: "assets/videos/project1-demo.mp4" },
+      { type: "image", src: "assets/images/project1-banner.jpg" },
     ],
-    github: "https://github.com/laap07/projeto-1",
-    live: "https://projeto1.vercel.app",
+    live: "https://play.google.com/store/apps/details?id=com.pastdreams",
   },
   2: {
-    title: "Nome do Projeto 2",
-    badge: "Novo",
-    category: "Backend",
-    status: "Em produção",
-    year: "2024",
-    role: "Backend Developer",
-    tech: ["Python", "Django", "PostgreSQL", "Docker"],
+    title: "Time To Kill! (Arena Shooter)",
+    category: "PC",
+    status: "Concluído",
+    year: "2023",
+    role: "Gameplay & Systems Programmer",
+    tech: ["Unity 3D", "C#", "PC", "Gameplay Systems", "AI", "Physics"],
     banner: "assets/images/project2-banner.jpg",
     desc: `
-      <p>Descreva seu projeto aqui.</p>
-      <h2>Desafios</h2>
-      <p>Principais desafios e soluções.</p>
+      <p><strong>Time To Kill!</strong> é um arena shooter 3D dinâmico focado em combate rápido, reflexos aguçados e navegação fluida de cenário.</p>
+      <h2>Sistemas de Gameplay</h2>
+      <p>Desenvolvimento do sistema completo de movimentação do jogador, mecânicas de tiro (recoil, projéteis/hitscan, spread de armas), HUD e interface de combate reativa.</p>
+      <h2>Inteligência Artificial & Spawns</h2>
+      <p>Inimigos com comportamentos de perseguição e ataque, gerenciamento de ondas de inimigos e otimização de colisões e efeitos visuais.</p>
     `,
     gallery: [
-      { type: "image", src: "assets/images/project2-screen1.jpg" },
-      { type: "image", src: "assets/images/project2-screen2.jpg" },
+      { type: "image", src: "assets/images/project2-banner.jpg" },
     ],
-    github: "https://github.com/laap07/projeto-2",
     live: "",
   },
   3: {
-    title: "Nome do Projeto 3",
-    badge: "Popular",
-    category: "Mobile",
-    status: "Concluído",
-    year: "2023",
-    role: "Mobile Developer",
-    tech: ["Flutter", "Firebase", "Dart"],
+    title: "Company Training Game",
+    category: "Serious Games",
+    status: "Entregue / Em produção",
+    year: "2023 - 2024",
+    role: "Game Developer (Kriativar)",
+    tech: ["Unity", "C#", "PC / Mobile / VR", "Serious Games", "Simulações"],
     banner: "assets/images/project3-banner.jpg",
-    desc: `<p>Descreva seu projeto aqui.</p>`,
+    desc: `
+      <p><strong>Company Training Game</strong> é uma solução de <em>Serious Game</em> criada para treinamentos corporativos interativos, transformando protocolos complexos em experiências imersivas de aprendizado.</p>
+      <h2>Desafios Corporativos</h2>
+      <p>Estruturação de árvores de diálogo, tomada de decisão com ramificações pedagógicas e coleta de métricas de desempenho dos participantes.</p>
+      <h2>Suporte Multiplataforma</h2>
+      <p>Arquitetura adaptada para execução em PC, dispositivos móveis e suporte a Realidade Virtual (VR), garantindo acessibilidade a diferentes perfis de equipes.</p>
+    `,
     gallery: [
-      { type: "image", src: "assets/images/project3-screen1.jpg" },
+      { type: "image", src: "assets/images/project3-banner.jpg" },
     ],
-    github: "https://github.com/laap07/projeto-3",
     live: "",
   },
   4: {
-    title: "Nome do Projeto 4",
-    badge: "Web",
-    category: "Web",
+    title: "Mini-Games for kids",
+    category: "Mobile",
     status: "Concluído",
-    year: "2023",
-    role: "Full Stack Developer",
-    tech: ["Vue.js", "Express", "MySQL"],
+    year: "2022 - 2023",
+    role: "Game Programmer (Nurv / Freelance)",
+    tech: ["Unity", "C#", "Mobile", "Touch Systems", "Educational"],
     banner: "assets/images/project4-banner.jpg",
-    desc: `<p>Descreva seu projeto aqui.</p>`,
+    desc: `
+      <p>Coleção de minijogos lúdicos desenvolvidos especialmente para crianças, focados no desenvolvimento cognitivo, coordenação motora e raciocínio lógico.</p>
+      <h2>Design Acessível</h2>
+      <p>Interfaces gráficas limpas e autoexplicativas que dispensam leitura complexa, com feedback sonoro e visual instantâneo para reforço positivo.</p>
+      <h2>Engenharia & Performance</h2>
+      <p>Mecânicas leves em Unity com tempos de carregamento instantâneos e suporte a diversas resoluções de telas de tablets e celulares.</p>
+    `,
     gallery: [
-      { type: "image", src: "assets/images/project4-screen1.jpg" },
+      { type: "image", src: "assets/images/project4-banner.jpg" },
     ],
-    github: "https://github.com/laap07/projeto-4",
     live: "",
   },
 };
 
-// Carrega dados do projeto na página individual
+// Carrega dados do jogo na página individual
 function loadProject(id) {
   const p = projects[id];
   if (!p) return;
@@ -319,9 +325,6 @@ function loadProject(id) {
 
   const titleEl = el('#projectTitle');
   if (titleEl) titleEl.textContent = p.title;
-
-  const badgeEl = el('#projectBadge');
-  if (badgeEl) badgeEl.textContent = p.badge;
 
   const bannerEl = el('#projectBanner');
   if (bannerEl) bannerEl.src = p.banner;
@@ -344,26 +347,27 @@ function loadProject(id) {
   const roleEl = el('#projectRole');
   if (roleEl) roleEl.textContent = p.role;
 
-  const githubEl = el('#projectGithub');
-  if (githubEl && p.github) { githubEl.href = p.github; } 
-  else if (githubEl) { githubEl.style.display = 'none'; }
-
   const liveEl = el('#projectLive');
-  if (liveEl && p.live) { liveEl.href = p.live; } 
-  else if (liveEl) { liveEl.style.display = 'none'; }
+  if (liveEl) {
+    if (p.live) {
+      liveEl.href = p.live;
+      liveEl.style.display = 'inline-flex';
+    } else {
+      liveEl.style.display = 'none';
+    }
+  }
 
   const galleryEl = el('#projectGallery');
   if (galleryEl && p.gallery) {
     galleryEl.innerHTML = p.gallery.map(item => {
       if (item.type === 'video') {
-        return `<video controls poster="">
+        return `<video controls>
           <source src="${item.src}" type="video/mp4">
         </video>`;
       }
       return `<img src="${item.src}" alt="${p.title}" loading="lazy" />`;
     }).join('');
 
-    // Ativa lightbox após renderizar
     galleryEl.querySelectorAll('img').forEach(img => {
       img.style.cursor = 'pointer';
       img.addEventListener('click', () => {
@@ -377,5 +381,5 @@ function loadProject(id) {
     });
   }
 
-  document.title = `${p.title} | Portfolio`;
+  document.title = `${p.title} | Luan A Procópio`;
 }

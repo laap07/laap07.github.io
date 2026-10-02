@@ -1,6 +1,6 @@
-# 🚀 Meu Portfólio Pessoal
+# 🎮 Portfólio de Game Programmer | Luan A Procópio
 
-Site de portfólio com visual inspirado na Steam — carrossel em destaque, grade de projetos com filtros, páginas individuais por projeto, galeria de mídia com lightbox e formulário de contato.
+Site de portfólio profissional para desenvolvedor de jogos (Unity / C#), com visual inspirado na Steam — carrossel em destaque na página inicial, grade de jogos com filtros (Mobile, PC, Serious Games), páginas de detalhes com galeria de mídia/vídeos, sobre mim e contato.
 
 ---
 
@@ -8,172 +8,116 @@ Site de portfólio com visual inspirado na Steam — carrossel em destaque, grad
 
 ```
 ProjetoCodigos/
-├── index.html          ← Página inicial (carousel + grade de projetos)
-├── projects.html       ← Lista completa de projetos com filtros
-├── project.html        ← Página individual de cada projeto (carregada via ?id=N)
-├── about.html          ← Página "Sobre Mim"
-├── contact.html        ← Página de Contato
+├── index.html          ← Página inicial (carrossel estilo Steam + grade de jogos)
+├── projects.html       ← Lista completa de jogos com filtros (Mobile, PC, Serious Games)
+├── project.html        ← Página detalhada de cada jogo (carrega dinamicamente via ?id=N)
+├── about.html          ← Página "Sobre Mim" (Unity, C#, experiência na Kriativar, Nurv, PUC Minas)
+├── contact.html        ← Página de Contato (e-mail: luanprocopio@hotmail.com)
 │
 ├── css/
-│   └── style.css       ← Estilos globais (tema escuro)
+│   └── style.css       ← Estilos globais (tema escuro estilo Steam)
 │
 ├── js/
-│   └── main.js         ← JavaScript: carousel, filtros, lightbox, dados dos projetos
+│   └── main.js         ← JavaScript do carrossel, filtros, lightbox e dados dos jogos
 │
 └── assets/
-    ├── images/         ← Suas fotos e screenshots (coloque aqui!)
-    │   ├── project1-banner.jpg   (imagem grande do banner - ~1600x900px)
-    │   ├── project1-thumb.jpg    (miniatura lateral - ~300x200px)
-    │   ├── project1-screen1.jpg  (screenshot da galeria)
-    │   ├── project2-banner.jpg
-    │   ├── project2-thumb.jpg
-    │   ├── ...
-    │   └── profile.jpg           (sua foto de perfil)
+    ├── images/         ← Fotos de perfil e capturas de tela dos jogos
+    │   ├── profile.jpg           ← Sua foto de perfil
+    │   ├── project1-banner.jpg   ← Past Dreams (banner)
+    │   ├── project1-thumb.jpg    ← Past Dreams (thumb)
+    │   ├── project2-banner.jpg   ← Time To Kill! (banner)
+    │   ├── project2-thumb.jpg    ← Time To Kill! (thumb)
+    │   ├── project3-banner.jpg   ← Company Training Game (banner)
+    │   ├── project3-thumb.jpg    ← Company Training Game (thumb)
+    │   ├── project4-banner.jpg   ← Mini-Games for kids (banner)
+    │   └── project4-thumb.jpg    ← Mini-Games for kids (thumb)
     │
-    ├── videos/         ← Seus vídeos de demonstração (.mp4 recomendado)
-    │   ├── project1-demo.mp4
-    │   └── ...
-    │
-    └── cv.pdf          ← Seu currículo (opcional)
+    ├── videos/         ← Vídeos de gameplay (.mp4)
+    └── cv.pdf          ← Seu currículo em PDF (opcional)
 ```
 
 ---
 
-## ✏️ Como Personalizar
+## 🕹️ Seus Jogos Cadastrados
 
-### 1. Informações pessoais
-Edite os seguintes itens em **todos os arquivos HTML** (use Ctrl+H para substituir em massa no VS Code):
+Os 4 jogos da sua imagem já estão configurados no arquivo `js/main.js`:
 
-| Texto de exemplo | Substituir por |
-|---|---|
-| `Luan Augusto Procópio` | Luan Augusto Procópio real |
-| `luanprocopio@hotmail.com` | Seu e-mail |
-| `laap07` | Seu usuário do GitHub |
-| `www.linkedin.com/in/luanprocopio` | Sua URL do LinkedIn |
-| `Desenvolvedor de Jogos` | Sua descrição profissional |
+1. **Past Dreams** (Mobile / Google Play)
+2. **Time To Kill! (Arena Shooter)** (PC / Gameplay 3D)
+3. **Company Training Game** (Serious Games / PC & Mobile & VR / Kriativar)
+4. **Mini-Games for kids** (Mobile / Educacional)
 
-### 2. Adicionar seus projetos
-Abra `js/main.js` e edite o objeto `projects`. Cada projeto tem:
+### Para adicionar mais jogos ou editar detalhes:
+Abra `js/main.js` e adicione ou edite no objeto `projects`:
 
 ```js
 const projects = {
   1: {
-    title: "Nome do Projeto",           // Título
-    badge: "Em Destaque",               // Badge (Em Destaque, Novo, Popular...)
-    category: "Web",                    // Categoria (Web, Mobile, Backend)
-    status: "Concluído",               // Status do projeto
-    year: "2024",                       // Ano
-    role: "Full Stack Developer",       // Seu papel
-    tech: ["React", "Node.js"],        // Tecnologias usadas
-    banner: "assets/images/p1-banner.jpg",
-    desc: `<p>Descrição HTML aqui...</p>`,
+    title: "Past Dreams",
+    category: "Mobile",
+    status: "Disponível na Google Play",
+    year: "2023 - 2024",
+    role: "Game Programmer (Unity / C#)",
+    tech: ["Unity", "C#", "Mobile", "Google Play"],
+    banner: "assets/images/project1-banner.jpg",
+    desc: `<p>Descrição do jogo aqui...</p>`,
     gallery: [
-      { type: "image", src: "assets/images/p1-screen1.jpg" },
-      { type: "video", src: "assets/videos/p1-demo.mp4" },
+      { type: "image", src: "assets/images/project1-banner.jpg" },
+      { type: "video", src: "assets/videos/gameplay.mp4" }
     ],
-    github: "https://github.com/laap07/repo",
-    live: "https://seu-projeto.vercel.app",
+    live: "https://link-do-jogo.com",
   },
-  // adicione mais projetos com IDs 2, 3, 4...
+  // adicione novos com 5, 6...
 };
-```
-
-### 3. Adicionar mais projetos na grade
-Em `index.html` e `projects.html`, copie um bloco `<article class="project-card">` e altere:
-- `data-category="web"` → categoria do filtro (`web`, `mobile`, `backend`)
-- `href="project.html?id=N"` → ID correspondente no objeto `projects` do JS
-- Textos, imagens e tags
-
-### 4. Adicionar slides ao carousel
-Em `index.html`, copie um bloco `<div class="carousel-slide">` e adicione uma nova miniatura `.thumb` no bloco `.carousel-thumbs`.
-
-**Usar vídeo no lugar de imagem no carousel:**
-```html
-<!-- Substitua <img ...> por: -->
-<video class="slide-media" autoplay muted loop playsinline>
-  <source src="assets/videos/meu-video.mp4" type="video/mp4">
-</video>
 ```
 
 ---
 
 ## 🌐 Como publicar no GitHub Pages
 
-### Passo a Passo Completo:
+### Passo a Passo:
 
-**1. Instale o Git** (se ainda não tiver):
-→ Baixe em https://git-scm.com/downloads e instale
+**1. Crie um repositório no GitHub:**
+- Acesse https://github.com/new
+- Nome do repositório: `portfolio` (ou `seu-usuario.github.io`)
+- Marque como **Public**
+- Clique em **Create repository**
 
-**2. Crie uma conta no GitHub** (se ainda não tiver):
-→ Acesse https://github.com e cadastre-se
-
-**3. Crie um repositório no GitHub:**
-- Clique em **"New repository"**
-- Nome: `laap07.github.io` (para o site ficar em `laap07.github.io`)
-  - **OU** qualquer nome como `portfolio` (ficará em `laap07.github.io/portfolio`)
-- Deixe como **Public**
-- **NÃO** marque nenhuma opção de inicialização
-- Clique em **"Create repository"**
-
-**4. No PowerShell, dentro da pasta do projeto:**
+**2. No terminal (PowerShell), envie os arquivos:**
 
 ```powershell
-# Navegue até a pasta
 cd d:\ProjetoSitePort\ProjetoCodigos
 
-# Inicie o Git
+# Inicializa o Git
 git init
 
-# Adicione todos os arquivos
+# Adiciona todos os arquivos
 git add .
 
-# Faça o primeiro commit
-git commit -m "Primeiro commit: portfólio completo"
+# Cria o commit inicial
+git commit -m "Portfólio de Game Programmer - Luan Procópio"
 
-# Conecte ao repositório do GitHub (substitua com seu usuário e nome do repo)
-git remote add origin https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+# Conecta ao repositório remoto (substitua com o link do seu GitHub)
+git remote add origin https://github.com/SEU_USUARIO/portfolio.git
 
-# Envie os arquivos
+# Envia os arquivos
+git branch -M main
 git push -u origin main
 ```
 
-**5. Ative o GitHub Pages:**
-- No repositório do GitHub, clique em **Settings**
-- Role até **"Pages"** no menu lateral esquerdo
-- Em **"Source"**, selecione **"Deploy from a branch"**
-- Em **"Branch"**, selecione **`main`** e **`/ (root)`**
-- Clique em **Save**
-- Aguarde ~2 minutos e seu site estará no ar! 🎉
-
-**6. Para atualizar o site depois:**
-```powershell
-git add .
-git commit -m "Atualizei os projetos"
-git push
-```
+**3. Ative o GitHub Pages:**
+1. Vá na aba **Settings** do seu repositório no GitHub
+2. No menu esquerdo, clique em **Pages**
+3. Em **Build and deployment > Branch**, selecione **main** e pasta **/ (root)**
+4. Clique em **Save**
+5. Em cerca de 1 a 2 minutos, o GitHub vai gerar o link do seu site no ar!
 
 ---
 
-## 💡 Dicas Extras
+## 🎨 Ajustes Rápidos
 
-- **Tamanho das imagens:** Use imagens otimizadas. Banners: ~1600x900px, miniaturas: ~600x400px
-- **Formato de vídeo:** `.mp4` com codec H.264 para máxima compatibilidade
-- **Compressão:** Use [squoosh.app](https://squoosh.app) para comprimir imagens antes de subir
-- **Vídeos grandes:** Considere hospedar no YouTube e embedar com `<iframe>` em vez de arquivo local
-- **Domínio personalizado:** No GitHub Pages > Settings > Pages você pode adicionar seu domínio
-
----
-
-## 🎨 Personalizando o Visual
-
-As cores principais estão definidas como variáveis CSS no topo de `css/style.css`:
-
-```css
-:root {
-  --accent:   #7f5af0;   /* Cor roxa principal - mude aqui! */
-  --accent-2: #2cb67d;   /* Verde secundário */
-  --bg-dark:  #0d0d0f;   /* Fundo escuro */
-}
-```
-
-Troque `--accent` por qualquer cor hex para mudar o tema inteiro.
+- **Trocar cor de destaque:** No arquivo `css/style.css`, altere a linha 11:
+  ```css
+  --accent: #7f5af0; /* Mude para azul, vermelho, ciano ou a cor que preferir */
+  ```
+- **Adicionar vídeos de gameplay:** Coloque arquivos `.mp4` na pasta `assets/videos/` e referencie no objeto `projects` em `js/main.js`.
