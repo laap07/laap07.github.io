@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projetos | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Portfolio<span class="logo-bracket">/&gt;</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projects.html" class="active">Projetos</a></li>
+        <li><a href="about.html">Sobre Mim</a></li>
+        <li><a href="contact.html">Contato</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Cabeçalho da página -->
+  <section class="page-hero">
+    <h1>Meus Projetos</h1>
+    <p>Uma coleção completa do meu trabalho — do conceito ao deploy.</p>
+  </section>
+
+  <!-- Grade completa de projetos com filtros -->
+  <section class="projects-section">
+    <div class="section-header">
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <article class="project-card" data-category="web">
+        <div class="card-media">
+          <img src="assets/images/project1-thumb.jpg" alt="Projeto 1" />
+          <div class="card-hover-overlay">
+            <a href="project.html?id=1" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Nome do Projeto 1</h3>
+            <span class="card-category">Web</span>
+          </div>
+          <p class="card-desc">Descrição curta do projeto.</p>
+          <div class="card-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+          </div>
+          <div class="card-footer">
+            <a href="project.html?id=1" class="btn btn-sm btn-primary">Detalhes</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="backend">
+        <div class="card-media">
+          <img src="assets/images/project2-thumb.jpg" alt="Projeto 2" />
+          <div class="card-hover-overlay">
+            <a href="project.html?id=2" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Nome do Projeto 2</h3>
+            <span class="card-category">Backend</span>
+          </div>
+          <p class="card-desc">Descrição curta do projeto.</p>
+          <div class="card-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+          </div>
+          <div class="card-footer">
+            <a href="project.html?id=2" class="btn btn-sm btn-primary">Detalhes</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="mobile">
+        <div class="card-media">
+          <img src="assets/images/project3-thumb.jpg" alt="Projeto 3" />
+          <div class="card-hover-overlay">
+            <a href="project.html?id=3" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Nome do Projeto 3</h3>
+            <span class="card-category">Mobile</span>
+          </div>
+          <p class="card-desc">Descrição curta do projeto.</p>
+          <div class="card-tech">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Firebase</span>
+          </div>
+          <div class="card-footer">
+            <a href="project.html?id=3" class="btn btn-sm btn-primary">Detalhes</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="web">
+        <div class="card-media">
+          <img src="assets/images/project4-thumb.jpg" alt="Projeto 4" />
+          <div class="card-hover-overlay">
+            <a href="project.html?id=4" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Nome do Projeto 4</h3>
+            <span class="card-category">Web</span>
+          </div>
+          <p class="card-desc">Descrição curta do projeto.</p>
+          <div class="card-tech">
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">Express</span>
+          </div>
+          <div class="card-footer">
+            <a href="project.html?id=4" class="btn btn-sm btn-primary">Detalhes</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Adicione mais cards aqui seguindo o mesmo padrão -->
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Portfolio<span class="logo-bracket">/&gt;</span></a>
+        <p>Desenvolvedor apaixonado por criar experiências digitais incríveis.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projects.html">Projetos</a></li>
+          <li><a href="about.html">Sobre Mim</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Redes Sociais</h4>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Luan Augusto Procópio. Feito com <i class="fas fa-heart"></i> e muito café.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

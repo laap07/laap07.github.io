@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Portfólio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>Portfolio<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="projects.html">Projetos</a></li>
+        <li><a href="about.html">Sobre Mim</a></li>
+        <li><a href="contact.html">Contato</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO CAROUSEL (estilo Steam) ===== -->
+  <section class="hero-carousel">
+    <div class="carousel-main">
+
+      <!-- Slide 1 -->
+      <div class="carousel-slide active" data-index="0">
+        <!-- Para usar vídeo: substitua a tag <img> abaixo por <video autoplay muted loop> -->
+        <img src="assets/images/project1-banner.jpg" alt="Projeto 1" class="slide-media" />
+        <div class="slide-overlay">
+          <div class="slide-content">
+            <span class="slide-badge">Em Destaque</span>
+            <h1 class="slide-title">Nome do Projeto 1</h1>
+            <p class="slide-desc">Uma breve descrição do seu projeto mais incrível. Mostre o que você construiu e por que ele é especial.</p>
+            <div class="slide-tags">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+            </div>
+            <div class="slide-actions">
+              <a href="project.html?id=1" class="btn btn-primary">Ver Projeto</a>
+              <a href="#" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-slide" data-index="1">
+        <img src="assets/images/project2-banner.jpg" alt="Projeto 2" class="slide-media" />
+        <div class="slide-overlay">
+          <div class="slide-content">
+            <span class="slide-badge">Novo</span>
+            <h1 class="slide-title">Nome do Projeto 2</h1>
+            <p class="slide-desc">Descrição do segundo projeto em destaque. Explique o problema que ele resolve.</p>
+            <div class="slide-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+            <div class="slide-actions">
+              <a href="project.html?id=2" class="btn btn-primary">Ver Projeto</a>
+              <a href="#" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-slide" data-index="2">
+        <img src="assets/images/project3-banner.jpg" alt="Projeto 3" class="slide-media" />
+        <div class="slide-overlay">
+          <div class="slide-content">
+            <span class="slide-badge">Popular</span>
+            <h1 class="slide-title">Nome do Projeto 3</h1>
+            <p class="slide-desc">Terceiro projeto em destaque. Destaque tecnologias e resultados alcançados.</p>
+            <div class="slide-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Dart</span>
+            </div>
+            <div class="slide-actions">
+              <a href="project.html?id=3" class="btn btn-primary">Ver Projeto</a>
+              <a href="#" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles do carousel -->
+      <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-btn next" id="nextBtn" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Miniaturas laterais (estilo Steam) -->
+    <div class="carousel-thumbs">
+      <div class="thumb active" data-index="0">
+        <img src="assets/images/project1-thumb.jpg" alt="Projeto 1" />
+        <div class="thumb-info">
+          <span class="thumb-title">Projeto 1</span>
+          <div class="thumb-progress"><div class="thumb-bar"></div></div>
+        </div>
+      </div>
+      <div class="thumb" data-index="1">
+        <img src="assets/images/project2-thumb.jpg" alt="Projeto 2" />
+        <div class="thumb-info">
+          <span class="thumb-title">Projeto 2</span>
+          <div class="thumb-progress"><div class="thumb-bar"></div></div>
+        </div>
+      </div>
+      <div class="thumb" data-index="2">
+        <img src="assets/images/project3-thumb.jpg" alt="Projeto 3" />
+        <div class="thumb-info">
+          <span class="thumb-title">Projeto 3</span>
+          <div class="thumb-progress"><div class="thumb-bar"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS / QUICK FACTS ===== -->
+  <section class="stats-bar">
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number" data-target="10">0</span>
+        <span class="stat-label">Projetos</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="3">0</span>
+        <span class="stat-label">Anos de Experiência</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="5">0</span>
+        <span class="stat-label">Tecnologias</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="100">0</span>
+        <span class="stat-label">% Dedicação</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJETOS EM GRADE ===== -->
+  <section class="projects-section" id="projects">
+    <div class="section-header">
+      <h2>Todos os Projetos</h2>
+      <p>Explore meu trabalho completo</p>
+      <!-- Filtros -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- Card Projeto 1 -->
+      <article class="project-card" data-category="web">
+        <div class="card-media">
+          <img src="assets/images/project1-thumb.jpg" alt="Projeto 1" />
+          <div class="card-hover-overlay">
+            <a href="project.html?id=1" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Nome do Projeto 1</h3>
+            <span class="card-category">Web</span>
+          </div>
+          <p class="card-desc">Descrição curta do projeto. O que ele faz, qual problema resolve.</p>
+          <div class="card-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+          </div>
+          <div class="card-footer">
+            <a href="project.html?id=1" class="btn btn-sm btn-primary">Detalhes</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card Projeto 2 -->
+      <article class="project-card" data-category="backend">
+        <div class="card-media">
+          <img src="assets/images/project2-thumb.jpg" alt="Projeto 2" />
+          <div class="card-hover-overlay">
+            <a href="project.html?id=2" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Nome do Projeto 2</h3>
+            <span class="card-category">Backend</span>
+          </div>
+          <p class="card-desc">Descrição curta do projeto. O que ele faz, qual problema resolve.</p>
+          <div class="card-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">PostgreSQL</span>
+          </div>
+          <div class="card-footer">
+            <a href="project.html?id=2" class="btn btn-sm btn-primary">Detalhes</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card Projeto 3 -->
+      <article class="project-card" data-category="mobile">
+        <div class="card-media">
+          <img src="assets/images/project3-thumb.jpg" alt="Projeto 3" />
+          <div class="card-hover-overlay">
+            <a href="project.html?id=3" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Nome do Projeto 3</h3>
+            <span class="card-category">Mobile</span>
+          </div>
+          <p class="card-desc">Descrição curta do projeto. O que ele faz, qual problema resolve.</p>
+          <div class="card-tech">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Firebase</span>
+          </div>
+          <div class="card-footer">
+            <a href="project.html?id=3" class="btn btn-sm btn-primary">Detalhes</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card Projeto 4 -->
+      <article class="project-card" data-category="web">
+        <div class="card-media">
+          <img src="assets/images/project4-thumb.jpg" alt="Projeto 4" />
+          <div class="card-hover-overlay">
+            <a href="project.html?id=4" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Nome do Projeto 4</h3>
+            <span class="card-category">Web</span>
+          </div>
+          <p class="card-desc">Descrição curta do projeto. O que ele faz, qual problema resolve.</p>
+          <div class="card-tech">
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
+          <div class="card-footer">
+            <a href="project.html?id=4" class="btn btn-sm btn-primary">Detalhes</a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="btn btn-sm btn-ghost" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="view-all-wrap">
+      <a href="projects.html" class="btn btn-outline">Ver Todos os Projetos <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- ===== CTA / BANNER ===== -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Vamos trabalhar juntos?</h2>
+      <p>Estou disponível para projetos freelance, colaborações e oportunidades de emprego.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary btn-lg">Entre em Contato</a>
+        <a href="about.html" class="btn btn-ghost btn-lg">Saiba Mais Sobre Mim</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-bracket">&lt;</span>Portfolio<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p>Desenvolvedor apaixonado por criar experiências digitais incríveis.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projects.html">Projetos</a></li>
+          <li><a href="about.html">Sobre Mim</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Redes Sociais</h4>
+        <div class="social-links">
+          <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Luan Augusto Procópio. Feito com <i class="fas fa-heart"></i> e muito café.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

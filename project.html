@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Portfolio<span class="logo-bracket">/&gt;</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projects.html" class="active">Projetos</a></li>
+        <li><a href="about.html">Sobre Mim</a></li>
+        <li><a href="contact.html">Contato</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Banner do projeto -->
+  <div class="project-hero">
+    <img id="projectBanner" src="assets/images/project1-banner.jpg" alt="Banner do Projeto" />
+    <div class="project-hero-overlay"></div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="project-detail">
+
+    <!-- Coluna principal -->
+    <main class="project-main">
+      <div class="project-tags-row">
+        <span class="slide-badge" id="projectBadge">Em Destaque</span>
+      </div>
+      <h1 id="projectTitle">Carregando...</h1>
+      <div class="slide-tags" id="projectTags"></div>
+
+      <!-- Descrição dinâmica -->
+      <div class="project-body" id="projectDesc">
+        <!-- Carregado via JS -->
+      </div>
+
+      <!-- Galeria de imagens e vídeos -->
+      <h2>Galeria de Mídia</h2>
+      <div class="project-gallery" id="projectGallery">
+        <!-- Carregado via JS -->
+      </div>
+
+      <!-- Navegação entre projetos -->
+      <div style="display:flex; gap:16px; margin-top:40px; padding-top:32px; border-top:1px solid var(--border);">
+        <a href="projects.html" class="btn btn-ghost"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="project-sidebar">
+      <div class="sidebar-card">
+        <h3>Informações</h3>
+        <div class="sidebar-info-item">
+          <span class="label">Categoria</span>
+          <span class="value" id="projectCategory">—</span>
+        </div>
+        <div class="sidebar-info-item">
+          <span class="label">Status</span>
+          <span class="value" id="projectStatus">—</span>
+        </div>
+        <div class="sidebar-info-item">
+          <span class="label">Ano</span>
+          <span class="value" id="projectYear">—</span>
+        </div>
+        <div class="sidebar-info-item">
+          <span class="label">Meu Papel</span>
+          <span class="value" id="projectRole">—</span>
+        </div>
+        <div class="sidebar-actions">
+          <a href="#" id="projectGithub" class="btn btn-ghost" target="_blank">
+            <i class="fa-brands fa-github"></i> Ver no GitHub
+          </a>
+          <a href="#" id="projectLive" class="btn btn-primary" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Ver ao Vivo
+          </a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+    <div id="lightboxMedia"></div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Portfolio<span class="logo-bracket">/&gt;</span></a>
+        <p>Desenvolvedor apaixonado por criar experiências digitais incríveis.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projects.html">Projetos</a></li>
+          <li><a href="about.html">Sobre Mim</a></li>
+          <li><a href="contact.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Redes Sociais</h4>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Luan Augusto Procópio. Feito com <i class="fas fa-heart"></i> e muito café.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
