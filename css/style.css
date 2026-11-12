@@ -1242,10 +1242,45 @@ ul { list-style: none; }
   .about-photo-col { max-width: 340px; margin: 0 auto; }
 }
 @media (max-width: 768px) {
-  .navbar { padding: 0 1rem; }
-  .nav-logo { font-size: 1.1rem; }
+  .navbar {
+    padding: 0 1rem;
+    background: rgba(13,13,15,0.95);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 1px 0 var(--border);
+  }
+  .nav-container {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 0 6px;
+    gap: 8px 0;
+  }
+  .nav-right { display: contents; }
+  .nav-logo { order: 1; font-size: 1.1rem; }
+  .lang-toggle { order: 2; }
+  .hamburger { display: none !important; }
+  .nav-links {
+    order: 3;
+    width: 100%;
+    position: static;
+    transform: none;
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: none;
+    border-top: 1px solid var(--border);
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0 4px;
+    gap: 8px;
+  }
+  .nav-links a {
+    font-size: 0.84rem;
+    font-weight: 600;
+    padding-bottom: 3px;
+    white-space: nowrap;
+  }
   .hero-carousel {
-    padding: 76px 1rem 32px;
+    padding: 108px 1rem 32px;
     min-height: auto;
     gap: 12px;
   }
@@ -1304,7 +1339,7 @@ ul { list-style: none; }
   .cta-content h2 { font-size: 1.65rem; }
   .cta-content p { font-size: 0.95rem; margin-bottom: 24px; }
 
-  .page-hero { padding: 96px 1.25rem 40px; }
+  .page-hero { padding: 118px 1.25rem 40px; }
   .page-hero h1 { font-size: 2rem; }
   .page-hero p { font-size: 0.95rem; }
 
