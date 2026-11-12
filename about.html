@@ -1,217 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre Mim | Luan A Procópio</title>
+  <title>About Me | Luan A Procópio</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body data-title="title.about">
 
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Luan Procópio<span class="logo-bracket">/&gt;</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projects.html">Projetos</a></li>
-        <li><a href="about.html" class="active">Sobre Mim</a></li>
-        <li><a href="contact.html">Contato</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="about.html" class="active" data-i18n="nav.about">About Me</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="pt">PT</button>
+        </div>
+        <button class="hamburger" id="hamburger" data-i18n-attr="aria-label:nav.menu" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- About hero -->
   <section class="page-hero">
-    <h1>Sobre Mim</h1>
-    <p>Conheça minha trajetória, habilidades técnicas e experiência em desenvolvimento de jogos.</p>
+    <h1 data-i18n="about.hero.title">About Me</h1>
+    <p data-i18n="about.hero.sub">My background, technical skills and experience in game development.</p>
   </section>
 
-  <!-- Seção principal -->
+  <!-- Intro -->
   <section class="about-section">
     <div class="about-image-wrap">
       <img src="assets/images/profile.jpg" alt="Luan A Procópio - Game Programmer" />
     </div>
     <div class="about-text">
-      <h1>Olá, sou <span style="color:var(--accent)">Luan A Procópio</span> 🎮</h1>
-      <p class="role">Game Programmer · Unity Developer · Systems & Gameplay</p>
-      <p>
-        Game programmer com sólida experiência no desenvolvimento de jogos educacionais, corporativos e comerciais utilizando Unity.
-      </p>
-      <p>
-        Experiência comprovada em plataformas <strong>PC, Mobile e VR</strong>, com foco especializado em sistemas de gameplay, experiências interativas imersivas e <em>serious games</em>.
-      </p>
-      <p>
-        Bacharel em Jogos Digitais pela PUC Minas (2021 – 2025), atuando na criação de soluções robustas, desde prototipagem rápida até arquitetura de sistemas escaláveis e multiplayer.
-      </p>
+      <h1><span data-i18n="about.hello">Hi, I am</span> <span style="color:var(--accent)">Luan A Procópio</span> 🎮</h1>
+      <p class="role" data-i18n="about.role">Game Programmer · Unity Developer · Systems &amp; Gameplay</p>
+      <p data-i18n="about.p1">Game programmer with solid experience.</p>
+      <p data-i18n-html="about.p2">Experience across <strong>PC, Mobile, VR and AR</strong>.</p>
+      <p data-i18n="about.p3">Bachelor in Digital Games from PUC Minas (2021 – 2025).</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;">
-        <a href="contact.html" class="btn btn-primary">Entre em Contato</a>
-        <a href="assets/cv.pdf" download class="btn btn-ghost">
-          <i class="fas fa-download"></i> Baixar CV (PDF)
-        </a>
+        <a href="contact.html" class="btn btn-primary" data-i18n="about.contact">Get in Touch</a>
       </div>
     </div>
   </section>
 
-  <!-- Skills / Expertise -->
-  <section style="max-width:1100px; margin:0 auto; padding:0 2rem 20px;">
-    <div class="section-header" style="margin-bottom:32px;">
-      <h2>Expertise & Ferramentas</h2>
-      <p>Competências técnicas em motores, linguagens, sistemas e pipelines de jogos</p>
+  <!-- Skills -->
+  <section class="skills-wrap">
+    <div class="section-header">
+      <h2 data-i18n="about.skills.title">Expertise &amp; Tools</h2>
+      <p data-i18n="about.skills.sub">Engines, languages, systems and game pipelines I work with</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fa-brands fa-unity" style="color:#ffffff;"></i><span data-i18n="skill.unity">Unity (3D / Mobile / VR / AR)</span></div>
+      <div class="skill-card"><i class="fas fa-code" style="color:#a855f7;"></i><span data-i18n="skill.csharp">C#</span></div>
+      <div class="skill-card"><i class="fas fa-gamepad" style="color:#7f5af0;"></i><span data-i18n="skill.gameplay">Gameplay &amp; Systems</span></div>
+      <div class="skill-card"><i class="fas fa-network-wired" style="color:#2cb67d;"></i><span data-i18n="skill.netcode">Netcode &amp; Multiplayer</span></div>
+      <div class="skill-card"><i class="fas fa-vr-cardboard" style="color:#ff8906;"></i><span data-i18n="skill.vrar">VR &amp; AR Development</span></div>
+      <div class="skill-card"><i class="fas fa-desktop" style="color:#38bdf8;"></i><span data-i18n="skill.ui">UI Systems</span></div>
+      <div class="skill-card"><i class="fas fa-cube" style="color:#f97316;"></i><span data-i18n="skill.blender">Blender (3D)</span></div>
+      <div class="skill-card"><i class="fa-brands fa-git-alt" style="color:#f05032;"></i><span data-i18n="skill.git">Git / Version Control</span></div>
+      <div class="skill-card"><i class="fas fa-robot" style="color:#22d3ee;"></i><span data-i18n="skill.ai">AI Tools &amp; Integration</span></div>
+      <div class="skill-card"><i class="fas fa-bolt" style="color:#facc15;"></i><span data-i18n="skill.proto">Rapid Prototyping</span></div>
     </div>
   </section>
 
-  <div class="skills-grid">
-    <div class="skill-card">
-      <i class="fa-brands fa-unity" style="color:#ffffff;"></i>
-      <span>Unity (3D/Mobile/VR/AR)</span>
-    </div>
-    <div class="skill-card">
-      <i class="fas fa-code" style="color:#a855f7;"></i>
-      <span>C#</span>
-    </div>
-    <div class="skill-card">
-      <i class="fas fa-gamepad" style="color:#7f5af0;"></i>
-      <span>Gameplay & Systems</span>
-    </div>
-    <div class="skill-card">
-      <i class="fas fa-network-wired" style="color:#2cb67d;"></i>
-      <span>Netcode & WebSockets</span>
-    </div>
-    <div class="skill-card">
-      <i class="fas fa-vr-cardboard" style="color:#ff8906;"></i>
-      <span>VR & AR Development</span>
-    </div>
-    <div class="skill-card">
-      <i class="fas fa-desktop" style="color:#38bdf8;"></i>
-      <span>UI Systems</span>
-    </div>
-    <div class="skill-card">
-      <i class="fas fa-cube" style="color:#f97316;"></i>
-      <span>Blender (3D)</span>
-    </div>
-    <div class="skill-card">
-      <i class="fa-brands fa-git-alt" style="color:#f05032;"></i>
-      <span>Git / Version Control</span>
-    </div>
-  </div>
-
-  <!-- Idiomas / English Level -->
-  <section style="max-width:800px; margin:0 auto; padding:0 2rem 50px;">
-    <div class="sidebar-card" style="margin-bottom: 0;">
-      <h3 style="margin-bottom: 16px; font-size: 1rem;"><i class="fas fa-globe"></i> English Proficiency</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px;">
-        <div>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Reading</span>
-          <div style="background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-top: 6px;">
-            <div style="width: 95%; height: 100%; background: var(--accent);"></div>
-          </div>
-        </div>
-        <div>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Listening</span>
-          <div style="background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-top: 6px;">
-            <div style="width: 95%; height: 100%; background: var(--accent);"></div>
-          </div>
-        </div>
-        <div>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Speaking</span>
-          <div style="background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-top: 6px;">
-            <div style="width: 85%; height: 100%; background: var(--accent);"></div>
-          </div>
-        </div>
-        <div>
-          <span style="font-size: 0.85rem; color: var(--text-secondary);">Writing</span>
-          <div style="background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-top: 6px;">
-            <div style="width: 85%; height: 100%; background: var(--accent);"></div>
-          </div>
-        </div>
+  <!-- English -->
+  <section class="lang-block">
+    <div class="sidebar-card">
+      <h3 style="margin-bottom:16px; font-size:1rem;"><i class="fas fa-globe"></i><span data-i18n="about.english">English Proficiency</span></h3>
+      <div class="lang-bars">
+        <div><span class="lbl" data-i18n="about.reading">Reading</span><div class="bar"><div style="width:85%"></div></div></div>
+        <div><span class="lbl" data-i18n="about.listening">Listening</span><div class="bar"><div style="width:85%"></div></div></div>
+        <div><span class="lbl" data-i18n="about.speaking">Speaking</span><div class="bar"><div style="width:75%"></div></div></div>
+        <div><span class="lbl" data-i18n="about.writing">Writing</span><div class="bar"><div style="width:75%"></div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- Linha do tempo / Experiência & Educação -->
-  <section style="max-width:800px; margin:0 auto; padding:0 2rem 80px;">
-    <div class="section-header" style="margin-bottom:40px;">
-      <h2>Experiência Profissional</h2>
+  <!-- Experience -->
+  <section class="timeline">
+    <div class="section-header">
+      <h2 data-i18n="about.exp.title">Professional Experience</h2>
     </div>
-    <div style="display:flex; flex-direction:column; gap:32px;">
+    <div class="tl-list">
 
-      <!-- Freelancer -->
-      <div style="display:flex; gap:24px; align-items:flex-start;">
-        <div style="width:48px; height:48px; background:rgba(127,90,240,0.15); border:1px solid rgba(127,90,240,0.35); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--accent);">
-          <i class="fas fa-gamepad"></i>
-        </div>
-        <div>
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-            <h3 style="font-size:1.05rem; font-weight:700;">Freelancer</h3>
-            <span style="font-size:0.82rem; color:var(--text-muted);">2024 – Presente</span>
-          </div>
-          <p style="color:var(--accent); font-size:0.9rem; font-weight:600; margin-bottom:6px;">Game Developer & Programmer</p>
-          <p style="color:var(--text-secondary); font-size:0.92rem;">Desenvolvimento de jogos educativos, governamentais, corporativos e focados em eventos e ativações.</p>
+      <div class="tl-item">
+        <div class="tl-icon" style="background:rgba(127,90,240,0.15); border:1px solid rgba(127,90,240,0.35); color:var(--accent);"><i class="fas fa-gamepad"></i></div>
+        <div class="tl-body">
+          <div class="tl-top"><h3 data-i18n="about.exp.free.title">Freelancer</h3><span class="date">2024 – <span data-i18n="about.present">Present</span></span></div>
+          <p class="tl-role" style="color:var(--accent);" data-i18n="about.exp.free.role">Game Developer &amp; Programmer</p>
+          <p class="tl-desc" data-i18n="about.exp.free.desc">Development of educational, government, corporate and event-focused games.</p>
         </div>
       </div>
 
-      <!-- Kriativar -->
-      <div style="display:flex; gap:24px; align-items:flex-start;">
-        <div style="width:48px; height:48px; background:rgba(44,182,125,0.12); border:1px solid rgba(44,182,125,0.35); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--accent-2);">
-          <i class="fas fa-vr-cardboard"></i>
-        </div>
-        <div>
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-            <h3 style="font-size:1.05rem; font-weight:700;">Kriativar</h3>
-            <span style="font-size:0.82rem; color:var(--text-muted);">2023 – Presente</span>
-          </div>
-          <p style="color:var(--accent-2); font-size:0.9rem; font-weight:600; margin-bottom:6px;">Game Developer & Programmer</p>
-          <p style="color:var(--text-secondary); font-size:0.92rem;">Desenvolvimento de jogos de treinamento corporativo e simulações para PC, Mobile e VR.</p>
+      <div class="tl-item">
+        <div class="tl-icon" style="background:rgba(44,182,125,0.12); border:1px solid rgba(44,182,125,0.35); color:var(--accent-2);"><i class="fas fa-vr-cardboard"></i></div>
+        <div class="tl-body">
+          <div class="tl-top"><h3>Kriativar</h3><span class="date">2023 – <span data-i18n="about.present">Present</span></span></div>
+          <p class="tl-role" style="color:var(--accent-2);" data-i18n="about.exp.kria.role">Game Developer &amp; Programmer</p>
+          <p class="tl-desc" data-i18n="about.exp.kria.desc">Development of corporate training games and simulations for PC, Mobile and VR.</p>
         </div>
       </div>
 
-      <!-- PUC Minas Mentor -->
-      <div style="display:flex; gap:24px; align-items:flex-start;">
-        <div style="width:48px; height:48px; background:rgba(255,137,6,0.12); border:1px solid rgba(255,137,6,0.35); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#ff8906;">
-          <i class="fas fa-chalkboard-teacher"></i>
-        </div>
-        <div>
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-            <h3 style="font-size:1.05rem; font-weight:700;">PUC Minas</h3>
-            <span style="font-size:0.82rem; color:var(--text-muted);">2023</span>
-          </div>
-          <p style="color:#ff8906; font-size:0.9rem; font-weight:600; margin-bottom:6px;">Mentor de Programação</p>
-          <p style="color:var(--text-secondary); font-size:0.92rem;">Mentoria técnica em programação de jogos e lógica para estudantes de graduação.</p>
+      <div class="tl-item">
+        <div class="tl-icon" style="background:rgba(255,137,6,0.12); border:1px solid rgba(255,137,6,0.35); color:#ff8906;"><i class="fas fa-chalkboard-teacher"></i></div>
+        <div class="tl-body">
+          <div class="tl-top"><h3>PUC Minas</h3><span class="date">2023</span></div>
+          <p class="tl-role" style="color:#ff8906;" data-i18n="about.exp.mentor.role">Programming Mentor</p>
+          <p class="tl-desc" data-i18n="about.exp.mentor.desc">Technical mentoring in game programming and logic for undergraduate students.</p>
         </div>
       </div>
 
-      <!-- Nurv -->
-      <div style="display:flex; gap:24px; align-items:flex-start;">
-        <div style="width:48px; height:48px; background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.35); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#38bdf8;">
-          <i class="fas fa-laptop-code"></i>
-        </div>
-        <div>
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-            <h3 style="font-size:1.05rem; font-weight:700;">Nurv</h3>
-            <span style="font-size:0.82rem; color:var(--text-muted);">2022 – 2023</span>
-          </div>
-          <p style="color:#38bdf8; font-size:0.9rem; font-weight:600; margin-bottom:6px;">Game Programmer</p>
-          <p style="color:var(--text-secondary); font-size:0.92rem;">Desenvolvimento de jogos comerciais e educativos com Unity.</p>
+      <div class="tl-item">
+        <div class="tl-icon" style="background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.35); color:#38bdf8;"><i class="fas fa-laptop-code"></i></div>
+        <div class="tl-body">
+          <div class="tl-top"><h3>Nurv</h3><span class="date">2022 – 2023</span></div>
+          <p class="tl-role" style="color:#38bdf8;" data-i18n="about.exp.nurv.role">Game Programmer</p>
+          <p class="tl-desc" data-i18n="about.exp.nurv.desc">Development of commercial and educational games with Unity.</p>
         </div>
       </div>
 
-      <!-- Formação Acadêmica -->
-      <div style="display:flex; gap:24px; align-items:flex-start; border-top:1px solid var(--border); padding-top: 32px;">
-        <div style="width:48px; height:48px; background:rgba(255,255,255,0.08); border:1px solid var(--border); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--text-primary);">
-          <i class="fas fa-graduation-cap"></i>
-        </div>
-        <div>
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-            <h3 style="font-size:1.05rem; font-weight:700;">PUC Minas</h3>
-            <span style="font-size:0.82rem; color:var(--text-muted);">2021 – 2025</span>
-          </div>
-          <p style="color:var(--accent); font-size:0.9rem; font-weight:600; margin-bottom:6px;">Bacharelado em Jogos Digitais (Bachelor degree in Digital Games)</p>
-          <p style="color:var(--text-secondary); font-size:0.92rem;">Formação focada em desenvolvimento e engenharia de jogos, gameplay, física, computação gráfica e inteligência artificial.</p>
+      <div class="tl-item sep">
+        <div class="tl-icon" style="background:rgba(255,255,255,0.08); border:1px solid var(--border); color:var(--text-primary);"><i class="fas fa-graduation-cap"></i></div>
+        <div class="tl-body">
+          <div class="tl-top"><h3>PUC Minas</h3><span class="date">2021 – 2025</span></div>
+          <p class="tl-role" style="color:var(--accent);" data-i18n="about.edu.degree">Bachelor in Digital Games</p>
+          <p class="tl-desc" data-i18n="about.edu.desc">Degree focused on game development and engineering.</p>
         </div>
       </div>
 
@@ -222,32 +145,32 @@
     <div class="footer-container">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Luan Procópio<span class="logo-bracket">/&gt;</span></a>
-        <p>Game Programmer apaixonado por criar experiências digitais incríveis.</p>
+        <p data-i18n="footer.tagline">Game programmer passionate about building memorable interactive experiences.</p>
       </div>
       <div class="footer-links">
-        <h4>Navegação</h4>
+        <h4 data-i18n="footer.nav">Navigation</h4>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projects.html">Projetos</a></li>
-          <li><a href="about.html">Sobre Mim</a></li>
-          <li><a href="contact.html">Contato</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-social">
-        <h4>Redes & Links</h4>
+        <h4 data-i18n="footer.links">Links</h4>
         <div class="social-links">
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://itch.io" target="_blank" aria-label="Itch.io"><i class="fa-brands fa-itch-io"></i></a>
-          <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://nulltetz.itch.io" target="_blank" rel="noopener" aria-label="Itch.io"><i class="fa-brands fa-itch-io"></i></a>
+          <a href="https://github.com/laap07" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
           <a href="mailto:luanprocopio@hotmail.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Luan A Procópio · Game Programmer.</p>
+      <p>&copy; 2025 <span data-i18n="footer.rights">Luan A Procópio · Game Programmer.</span></p>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,29 +1,22 @@
 # 🎮 Luan Procópio — Game Programmer Portfolio
 
-Repositório do meu site de portfólio profissional, apresentando projetos de jogos desenvolvidos com **Unity** e **C#**.
+Portfolio website showcasing games built with **Unity** and **C#**: entertainment games and serious games for education, companies and events.
 
-🔗 **Acesse o site:** [laap07.github.io](https://laap07.github.io)
-
----
-
-## 🕹️ Projetos em Destaque
-
-- **Past Dreams** — Jogo mobile publicado na Google Play (Unity / C#).
-- **Time To Kill! (Arena Shooter)** — Arena Shooter 3D com mecânicas de combate e movimentação rápida.
-- **Company Training Game** — Serious game interativo desenvolvido para múltiplas plataformas (PC, Mobile e VR).
-- **Mini-Games for Kids** — Conjunto de mini-jogos educativos para o público infantil.
+🔗 **Live site:** [laap07.github.io](https://laap07.github.io)
 
 ---
 
-## 🛠️ Tecnologias do Site
+## 🌐 Features
 
-- HTML5, CSS3, JavaScript (ES6+)
-- Design responsivo com tema escuro inspirado na interface Steam
-- Hospedado no GitHub Pages
+- Bilingual (English by default / Português) with a language switch
+- Visual project showcase with images, videos and looping clips
+- Responsive dark theme
+- Contact form delivered straight to e-mail
 
----
+## 🛠️ Stack
 
-## 📬 Contato
+HTML5 · CSS3 · JavaScript · GitHub Pages
 
-- **E-mail:** [luanprocopio@hotmail.com](mailto:luanprocopio@hotmail.com)
-- **LinkedIn:** [Perfil no LinkedIn](https://www.linkedin.com)
+## 📬 Contact
+
+[luanprocopio@hotmail.com](mailto:luanprocopio@hotmail.com)

@@ -1,112 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato | Luan A Procópio</title>
+  <title>Contact | Luan A Procópio</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body data-title="title.contact">
 
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Luan Procópio<span class="logo-bracket">/&gt;</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projects.html">Projetos</a></li>
-        <li><a href="about.html">Sobre Mim</a></li>
-        <li><a href="contact.html" class="active">Contato</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
+          <li><a href="contact.html" class="active" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="pt">PT</button>
+        </div>
+        <button class="hamburger" id="hamburger" data-i18n-attr="aria-label:nav.menu" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
   <section class="page-hero">
-    <h1>Entre em Contato</h1>
-    <p>Vamos conversar sobre desenvolvimento de jogos, oportunidades profissionais ou parcerias.</p>
+    <h1 data-i18n="contact.hero.title">Get in Touch</h1>
+    <p data-i18n="contact.hero.sub">Have a proposal, a project idea or a job offer? Let us talk.</p>
   </section>
 
   <section class="contact-section">
-    <!-- Informações de contato -->
     <div class="contact-info">
-      <h2>Vamos construir algo incrível!</h2>
-      <p>
-        Disponível para oportunidades em estúdios, projetos independentes, sérios ou freelance em Unity.
-      </p>
+      <h2 data-i18n="contact.info.title">Let us build something together!</h2>
+      <p data-i18n="contact.info.desc">Feel free to reach out about project proposals, job offers or any idea.</p>
 
       <div class="contact-item">
-        <div class="contact-item-icon">
-          <i class="fas fa-envelope"></i>
-        </div>
+        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
         <div class="contact-item-text">
-          <span class="label">E-mail</span>
+          <span class="label" data-i18n="contact.email">E-mail</span>
           <a class="value" href="mailto:luanprocopio@hotmail.com">luanprocopio@hotmail.com</a>
         </div>
       </div>
 
       <div class="contact-item">
-        <div class="contact-item-icon">
-          <i class="fa-brands fa-linkedin"></i>
-        </div>
+        <div class="contact-item-icon"><i class="fa-brands fa-itch-io"></i></div>
         <div class="contact-item-text">
-          <span class="label">LinkedIn</span>
-          <a class="value" href="https://linkedin.com" target="_blank">Perfil no LinkedIn</a>
+          <span class="label" data-i18n="contact.itch">Itch.io</span>
+          <a class="value" href="https://nulltetz.itch.io" target="_blank" rel="noopener" data-i18n="contact.itch.v">My games on Itch.io</a>
         </div>
       </div>
 
       <div class="contact-item">
-        <div class="contact-item-icon">
-          <i class="fa-brands fa-itch-io"></i>
-        </div>
+        <div class="contact-item-icon"><i class="fa-brands fa-github"></i></div>
         <div class="contact-item-text">
-          <span class="label">Itch.io</span>
-          <a class="value" href="https://itch.io" target="_blank">Jogos no Itch.io</a>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-item-icon">
-          <i class="fa-brands fa-github"></i>
-        </div>
-        <div class="contact-item-text">
-          <span class="label">GitHub</span>
-          <a class="value" href="https://github.com" target="_blank">Repositórios no GitHub</a>
+          <span class="label" data-i18n="contact.github">GitHub</span>
+          <a class="value" href="https://github.com/laap07" target="_blank" rel="noopener" data-i18n="contact.github.v">Repositories on GitHub</a>
         </div>
       </div>
     </div>
 
-    <!-- Formulário de contato -->
     <div>
-      <form class="contact-form" id="contactForm">
+      <!-- Messages are delivered to the e-mail below through FormSubmit (formsubmit.co) -->
+      <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/luanprocopio@hotmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from the portfolio website" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
         <div class="form-group">
-          <label for="name">Seu Nome</label>
-          <input type="text" id="name" name="name" placeholder="Ex: Ana Souza" required />
+          <label for="name" data-i18n="contact.name">Your Name</label>
+          <input type="text" id="name" name="name" data-i18n-attr="placeholder:contact.name.ph" placeholder="e.g. Jane Smith" required />
         </div>
         <div class="form-group">
-          <label for="email">Seu E-mail</label>
-          <input type="email" id="email" name="email" placeholder="exemplo@empresa.com" required />
+          <label for="email" data-i18n="contact.email.label">Your E-mail</label>
+          <input type="email" id="email" name="email" data-i18n-attr="placeholder:contact.email.ph" placeholder="you@company.com" required />
         </div>
         <div class="form-group">
-          <label for="subject">Assunto</label>
-          <input type="text" id="subject" name="subject" placeholder="Oportunidade / Proposta de Jogo..." required />
+          <label for="subject" data-i18n="contact.subject">Subject</label>
+          <input type="text" id="subject" name="subject" data-i18n-attr="placeholder:contact.subject.ph" placeholder="Project proposal / Job offer..." required />
         </div>
         <div class="form-group">
-          <label for="message">Mensagem</label>
-          <textarea id="message" name="message" placeholder="Olá Luan, gostei muito do seu trabalho com jogos e gostaria de..." required></textarea>
+          <label for="message" data-i18n="contact.message">Message</label>
+          <textarea id="message" name="message" data-i18n-attr="placeholder:contact.message.ph" placeholder="Hi Luan, I liked your work and would like to talk about..." required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;">
-          <i class="fas fa-paper-plane"></i> Enviar Mensagem
+        <div class="form-error" id="formError" data-i18n="contact.error">Something went wrong while sending.</div>
+        <button type="submit" class="btn btn-primary btn-lg" style="justify-content:center;">
+          <i class="fas fa-paper-plane"></i> <span data-i18n="contact.send">Send Message</span>
         </button>
       </form>
 
       <div class="form-success" id="formSuccess">
         <i class="fas fa-check-circle" style="font-size:2rem; margin-bottom:12px;"></i>
-        <h3 style="margin-bottom:8px;">Mensagem enviada com sucesso!</h3>
-        <p>Obrigado pelo contato. Responderei o mais rápido possível.</p>
+        <h3 data-i18n="contact.success.title">Message sent!</h3>
+        <p data-i18n="contact.success.desc">Thank you for reaching out.</p>
       </div>
     </div>
   </section>
@@ -115,32 +108,32 @@
     <div class="footer-container">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Luan Procópio<span class="logo-bracket">/&gt;</span></a>
-        <p>Game Programmer apaixonado por criar experiências digitais incríveis.</p>
+        <p data-i18n="footer.tagline">Game programmer passionate about building memorable interactive experiences.</p>
       </div>
       <div class="footer-links">
-        <h4>Navegação</h4>
+        <h4 data-i18n="footer.nav">Navigation</h4>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projects.html">Projetos</a></li>
-          <li><a href="about.html">Sobre Mim</a></li>
-          <li><a href="contact.html">Contato</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-social">
-        <h4>Redes & Links</h4>
+        <h4 data-i18n="footer.links">Links</h4>
         <div class="social-links">
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://itch.io" target="_blank" aria-label="Itch.io"><i class="fa-brands fa-itch-io"></i></a>
-          <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://nulltetz.itch.io" target="_blank" rel="noopener" aria-label="Itch.io"><i class="fa-brands fa-itch-io"></i></a>
+          <a href="https://github.com/laap07" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
           <a href="mailto:luanprocopio@hotmail.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Luan A Procópio · Game Programmer.</p>
+      <p>&copy; 2025 <span data-i18n="footer.rights">Luan A Procópio · Game Programmer.</span></p>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

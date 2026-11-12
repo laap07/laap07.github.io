@@ -1,311 +1,210 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luan A Procópio | Game Programmer</title>
+  <title>Luan A ProcÃ³pio | Game Programmer</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body data-title="title.home">
 
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>Luan Procópio<span class="logo-bracket">/&gt;</span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="active">Início</a></li>
-        <li><a href="projects.html">Projetos</a></li>
-        <li><a href="about.html">Sobre Mim</a></li>
-        <li><a href="contact.html">Contato</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Luan ProcÃ³pio<span class="logo-bracket">/&gt;</span></a>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="pt">PT</button>
+        </div>
+        <button class="hamburger" id="hamburger" data-i18n-attr="aria-label:nav.menu" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- ===== HERO CAROUSEL (estilo Steam) ===== -->
+  <!-- ===== HERO CAROUSEL ===== -->
   <section class="hero-carousel">
     <div class="carousel-main">
 
-      <!-- Slide 1: Past Dreams -->
       <div class="carousel-slide active" data-index="0">
-        <img src="assets/images/project1-banner.jpg" alt="Past Dreams" class="slide-media" />
+        <img src="assets/media/entertainment/ttk-cover.jpg" alt="Time To Kill!" class="slide-media" />
         <div class="slide-overlay">
           <div class="slide-content">
+            <span class="slide-badge" data-i18n="home.badge.ent">Entertainment</span>
+            <h1 class="slide-title">Time To Kill!</h1>
+            <p class="slide-desc" data-i18n="home.slide1.desc">Arena shooter built as my graduation project.</p>
+            <div class="slide-tags">
+              <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">PC</span><span class="tag">Multiplayer</span>
+            </div>
+            <div class="slide-actions">
+              <a href="projects.html#entertainment" class="btn btn-primary" data-i18n="home.cta.view">View Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-slide portrait" data-index="1">
+        <img src="assets/media/entertainment/pastdream1.jpg" alt="Past Dreams" class="slide-media" />
+        <div class="slide-overlay">
+          <div class="slide-content">
+            <span class="slide-badge" data-i18n="home.badge.ent">Entertainment</span>
             <h1 class="slide-title">Past Dreams</h1>
-            <p class="slide-desc">Jogo mobile disponível na Google Play. Experiência interativa rica em arte e mecânicas imersivas desenvolvidas em Unity.</p>
+            <p class="slide-desc" data-i18n="home.slide2.desc">Mobile game available on Google Play.</p>
             <div class="slide-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">C#</span>
-              <span class="tag">Mobile</span>
-              <span class="tag">Google Play</span>
+              <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Mobile</span><span class="tag">Google Play</span>
             </div>
             <div class="slide-actions">
-              <a href="project.html?id=1" class="btn btn-primary">Ver Projeto</a>
+              <a href="projects.html#entertainment" class="btn btn-primary" data-i18n="home.cta.view">View Projects</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Slide 2: Time To Kill! -->
-      <div class="carousel-slide" data-index="1">
-        <img src="assets/images/project2-banner.jpg" alt="Time To Kill! (Arena Shooter)" class="slide-media" />
-        <div class="slide-overlay">
-          <div class="slide-content">
-            <h1 class="slide-title">Time To Kill! (Arena Shooter)</h1>
-            <p class="slide-desc">Arena shooter em ritmo acelerado para PC com sistemas refinados de movimentação, combate e inteligência artificial.</p>
-            <div class="slide-tags">
-              <span class="tag">Unity 3D</span>
-              <span class="tag">C#</span>
-              <span class="tag">PC</span>
-              <span class="tag">Gameplay Systems</span>
-            </div>
-            <div class="slide-actions">
-              <a href="project.html?id=2" class="btn btn-primary">Ver Projeto</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 3: Company Training Game -->
       <div class="carousel-slide" data-index="2">
-        <img src="assets/images/project3-banner.jpg" alt="Company Training Game" class="slide-media" />
+        <img src="assets/media/corporate/3coracoes1.jpg" alt="Corporate training game" class="slide-media" />
         <div class="slide-overlay">
           <div class="slide-content">
-            <h1 class="slide-title">Company Training Game</h1>
-            <p class="slide-desc">Serious game corporativo voltado para treinamento empresarial e simulação de procedimentos interativos.</p>
+            <span class="slide-badge" data-i18n="home.badge.corp">Corporate Training</span>
+            <h1 class="slide-title" data-i18n="proj.3c.title">Safe Driving Training</h1>
+            <p class="slide-desc" data-i18n="home.slide3.desc">Interactive safety training game for a company.</p>
             <div class="slide-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">C#</span>
-              <span class="tag">PC / Mobile</span>
-              <span class="tag">Serious Games</span>
+              <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Serious Games</span>
             </div>
             <div class="slide-actions">
-              <a href="project.html?id=3" class="btn btn-primary">Ver Projeto</a>
+              <a href="projects.html#corporate" class="btn btn-primary" data-i18n="home.cta.view">View Projects</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Slide 4: Mini-Games for kids -->
       <div class="carousel-slide" data-index="3">
-        <img src="assets/images/project4-banner.jpg" alt="Mini-Games for kids" class="slide-media" />
+        <img src="assets/media/posters/game-carro.jpg" alt="Events and activations" class="slide-media" />
         <div class="slide-overlay">
           <div class="slide-content">
-            <h1 class="slide-title">Mini-Games for kids</h1>
-            <p class="slide-desc">Coleção de minijogos educativos para público infantil com interfaces dinâmicas, controles touch responsivos e alto engajamento.</p>
+            <span class="slide-badge" data-i18n="home.badge.events">Events &amp; Activations</span>
+            <h1 class="slide-title" data-i18n="home.slide4.title">Events &amp; Activations</h1>
+            <p class="slide-desc" data-i18n="home.slide4.desc">Games and quizzes for totems and events.</p>
             <div class="slide-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">C#</span>
-              <span class="tag">Mobile</span>
-              <span class="tag">Educational</span>
+              <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Touch</span><span class="tag">Totems</span>
             </div>
             <div class="slide-actions">
-              <a href="project.html?id=4" class="btn btn-primary">Ver Projeto</a>
+              <a href="projects.html#events" class="btn btn-primary" data-i18n="home.cta.view">View Projects</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Controles do carousel -->
-      <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-      <button class="carousel-btn next" id="nextBtn" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+      <button class="carousel-btn prev" id="prevBtn" data-i18n-attr="aria-label:home.prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-btn next" id="nextBtn" data-i18n-attr="aria-label:home.next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
     </div>
 
-    <!-- Miniaturas laterais (estilo Steam) -->
     <div class="carousel-thumbs">
       <div class="thumb active" data-index="0">
-        <img src="assets/images/project1-thumb.jpg" alt="Past Dreams" />
-        <div class="thumb-info">
-          <span class="thumb-title">Past Dreams</span>
-          <div class="thumb-progress"><div class="thumb-bar"></div></div>
-        </div>
-      </div>
-      <div class="thumb" data-index="1">
-        <img src="assets/images/project2-thumb.jpg" alt="Time To Kill!" />
+        <img src="assets/media/entertainment/ttk-cover.jpg" alt="Time To Kill!" />
         <div class="thumb-info">
           <span class="thumb-title">Time To Kill!</span>
           <div class="thumb-progress"><div class="thumb-bar"></div></div>
         </div>
       </div>
-      <div class="thumb" data-index="2">
-        <img src="assets/images/project3-thumb.jpg" alt="Company Training Game" />
+      <div class="thumb" data-index="1">
+        <img src="assets/media/entertainment/pastdream1.jpg" alt="Past Dreams" />
         <div class="thumb-info">
-          <span class="thumb-title">Company Training</span>
+          <span class="thumb-title">Past Dreams</span>
+          <div class="thumb-progress"><div class="thumb-bar"></div></div>
+        </div>
+      </div>
+      <div class="thumb" data-index="2">
+        <img src="assets/media/corporate/3coracoes1.jpg" alt="Corporate training" />
+        <div class="thumb-info">
+          <span class="thumb-title" data-i18n="home.badge.corp">Corporate Training</span>
           <div class="thumb-progress"><div class="thumb-bar"></div></div>
         </div>
       </div>
       <div class="thumb" data-index="3">
-        <img src="assets/images/project4-thumb.jpg" alt="Mini-Games for kids" />
+        <img src="assets/media/posters/game-carro.jpg" alt="Events" />
         <div class="thumb-info">
-          <span class="thumb-title">Mini-Games</span>
+          <span class="thumb-title" data-i18n="home.badge.events">Events &amp; Activations</span>
           <div class="thumb-progress"><div class="thumb-bar"></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== STATS / QUICK FACTS ===== -->
+  <!-- ===== STATS ===== -->
   <section class="stats-bar">
     <div class="stats-container">
       <div class="stat-item">
+        <span class="stat-number" data-target="3">0</span>
+        <span class="stat-label" data-i18n="home.stat.years">Years of Experience</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
         <span class="stat-number" data-target="4">0</span>
-        <span class="stat-label">Jogos em Portfólio</span>
+        <span class="stat-label" data-i18n="home.stat.platforms">Platforms (PC, Mobile, VR, AR)</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item">
-        <span class="stat-number" data-target="3">0</span>
-        <span class="stat-label">Anos de Experiência</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-number" data-target="3">0</span>
-        <span class="stat-label">Plataformas (PC, Mobile, VR)</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-number" data-target="100">0</span>
-        <span class="stat-label">% Foco em Gameplay & Unity</span>
+        <span class="stat-number" data-target="4">0</span>
+        <span class="stat-label" data-i18n="home.stat.areas">Areas: Entertainment, Education, Corporate, Events</span>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROJETOS EM GRADE ===== -->
-  <section class="projects-section" id="projects">
+  <!-- ===== CATEGORIES ===== -->
+  <section class="projects-section">
     <div class="section-header">
-      <h2>Meus Jogos & Projetos</h2>
-      <p>Explore jogos comerciais, educativos, corporativos e independentes</p>
-      <!-- Filtros -->
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">Todos</button>
-        <button class="filter-btn" data-filter="mobile">Mobile</button>
-        <button class="filter-btn" data-filter="pc">PC</button>
-        <button class="filter-btn" data-filter="serious">Serious Games</button>
-      </div>
+      <h2 data-i18n="home.cats.title">What I Build</h2>
+      <p data-i18n="home.cats.sub">From entertainment games to serious games</p>
     </div>
 
-    <div class="projects-grid" id="projectsGrid">
+    <div class="cat-grid">
+      <a href="projects.html#entertainment" class="cat-card">
+        <img class="cat-bg" src="assets/media/entertainment/ttk-scenario1.jpg" alt="" />
+        <div class="cat-body">
+          <h3 data-i18n="home.cat.ent.title">Entertainment Games</h3>
+          <p data-i18n="home.cat.ent.desc">Commercial and academic games.</p>
+          <div class="cat-chips">
+            <span class="tag">Time To Kill!</span>
+            <span class="tag">Past Dreams</span>
+          </div>
+          <span class="btn btn-primary btn-sm"><span data-i18n="home.cat.explore">Explore</span> <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
 
-      <!-- Card Jogo 1 -->
-      <article class="project-card" data-category="mobile">
-        <div class="card-media">
-          <img src="assets/images/project1-thumb.jpg" alt="Past Dreams" />
-          <div class="card-hover-overlay">
-            <a href="project.html?id=1" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+      <a href="projects.html#serious" class="cat-card">
+        <img class="cat-bg" src="assets/media/posters/totem-governador.jpg" alt="" />
+        <div class="cat-body">
+          <h3 data-i18n="home.cat.serious.title">Serious Games</h3>
+          <p data-i18n="home.cat.serious.desc">Games with a purpose.</p>
+          <div class="cat-chips">
+            <span class="tag" data-i18n="home.cat.education">Education</span>
+            <span class="tag" data-i18n="home.cat.corporate">Corporate</span>
+            <span class="tag" data-i18n="home.cat.events">Events</span>
           </div>
+          <span class="btn btn-primary btn-sm"><span data-i18n="home.cat.explore">Explore</span> <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <h3 class="card-title">Past Dreams</h3>
-            <span class="card-category">Mobile</span>
-          </div>
-          <p class="card-desc">Jogo mobile disponível na Google Play com narrativa e mecânicas interativas.</p>
-          <div class="card-tech">
-            <span class="tech-tag">Unity</span>
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">Google Play</span>
-          </div>
-          <div class="card-footer">
-            <a href="project.html?id=1" class="btn btn-sm btn-primary">Detalhes</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card Jogo 2 -->
-      <article class="project-card" data-category="pc">
-        <div class="card-media">
-          <img src="assets/images/project2-thumb.jpg" alt="Time To Kill! (Arena Shooter)" />
-          <div class="card-hover-overlay">
-            <a href="project.html?id=2" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <h3 class="card-title">Time To Kill!</h3>
-            <span class="card-category">PC</span>
-          </div>
-          <p class="card-desc">Arena Shooter para PC com sistemas dinâmicos de gameplay, movimentação e armas.</p>
-          <div class="card-tech">
-            <span class="tech-tag">Unity 3D</span>
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">Gameplay</span>
-          </div>
-          <div class="card-footer">
-            <a href="project.html?id=2" class="btn btn-sm btn-primary">Detalhes</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card Jogo 3 -->
-      <article class="project-card" data-category="serious">
-        <div class="card-media">
-          <img src="assets/images/project3-thumb.jpg" alt="Company Training Game" />
-          <div class="card-hover-overlay">
-            <a href="project.html?id=3" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <h3 class="card-title">Company Training Game</h3>
-            <span class="card-category">Serious Games</span>
-          </div>
-          <p class="card-desc">Simulação gamificada para treinamento corporativo interativo em PC e Mobile.</p>
-          <div class="card-tech">
-            <span class="tech-tag">Unity</span>
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">PC / Mobile / VR</span>
-          </div>
-          <div class="card-footer">
-            <a href="project.html?id=3" class="btn btn-sm btn-primary">Detalhes</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card Jogo 4 -->
-      <article class="project-card" data-category="mobile">
-        <div class="card-media">
-          <img src="assets/images/project4-thumb.jpg" alt="Mini-Games for kids" />
-          <div class="card-hover-overlay">
-            <a href="project.html?id=4" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <h3 class="card-title">Mini-Games for kids</h3>
-            <span class="card-category">Mobile</span>
-          </div>
-          <p class="card-desc">Jogos casuais e educativos para crianças com feedback sonoro e visual intuitivo.</p>
-          <div class="card-tech">
-            <span class="tech-tag">Unity</span>
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">UI / Touch</span>
-          </div>
-          <div class="card-footer">
-            <a href="project.html?id=4" class="btn btn-sm btn-primary">Detalhes</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="view-all-wrap">
-      <a href="projects.html" class="btn btn-outline">Ver Todos os Projetos <i class="fas fa-arrow-right"></i></a>
+      </a>
     </div>
   </section>
 
-  <!-- ===== CTA / BANNER ===== -->
+  <!-- ===== CTA ===== -->
   <section class="cta-section">
     <div class="cta-content">
-      <h2>Precisa de um Game Programmer?</h2>
-      <p>Desenvolvimento em Unity para PC, Mobile e VR, gameplay systems, serious games e prototipagem.</p>
+      <h2 data-i18n="home.cta.title">Have an idea or an opportunity?</h2>
+      <p data-i18n="home.cta.desc">Get in touch.</p>
       <div class="cta-buttons">
-        <a href="contact.html" class="btn btn-primary btn-lg">Entre em Contato</a>
-        <a href="about.html" class="btn btn-ghost btn-lg">Conheça Minha Trajetória</a>
+        <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="home.cta.contact">Get in Touch</a>
+        <a href="about.html" class="btn btn-ghost btn-lg" data-i18n="home.cta.about">About Me</a>
       </div>
     </div>
   </section>
@@ -314,35 +213,34 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo">
-          <span class="logo-bracket">&lt;</span>Luan Procópio<span class="logo-bracket">/&gt;</span>
-        </a>
-        <p>Game Programmer apaixonado por criar experiências interativas memoráveis.</p>
+        <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Luan ProcÃ³pio<span class="logo-bracket">/&gt;</span></a>
+        <p data-i18n="footer.tagline">Game programmer passionate about building memorable interactive experiences.</p>
       </div>
       <div class="footer-links">
-        <h4>Navegação</h4>
+        <h4 data-i18n="footer.nav">Navigation</h4>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projects.html">Projetos</a></li>
-          <li><a href="about.html">Sobre Mim</a></li>
-          <li><a href="contact.html">Contato</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-social">
-        <h4>Redes & Links</h4>
+        <h4 data-i18n="footer.links">Links</h4>
         <div class="social-links">
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://itch.io" target="_blank" aria-label="Itch.io"><i class="fa-brands fa-itch-io"></i></a>
-          <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://nulltetz.itch.io" target="_blank" rel="noopener" aria-label="Itch.io"><i class="fa-brands fa-itch-io"></i></a>
+          <a href="https://github.com/laap07" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
           <a href="mailto:luanprocopio@hotmail.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Luan A Procópio · Game Programmer.</p>
+      <p>&copy; 2025 <span data-i18n="footer.rights">Luan A ProcÃ³pio Â· Game Programmer.</span></p>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
+

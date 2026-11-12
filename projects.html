@@ -1,182 +1,292 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jogos & Projetos | Luan A Procópio</title>
+  <title>Projects | Luan A Procópio</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body data-title="title.projects">
 
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Luan Procópio<span class="logo-bracket">/&gt;</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projects.html" class="active">Projetos</a></li>
-        <li><a href="about.html">Sobre Mim</a></li>
-        <li><a href="contact.html">Contato</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="projects.html" class="active" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="pt">PT</button>
+        </div>
+        <button class="hamburger" id="hamburger" data-i18n-attr="aria-label:nav.menu" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- Cabeçalho da página -->
   <section class="page-hero">
-    <h1>Meus Jogos & Projetos</h1>
-    <p>Experiências interativas desenvolvidas em Unity para PC, Mobile e VR.</p>
+    <h1 data-i18n="proj.hero.title">Projects</h1>
+    <p data-i18n="proj.hero.sub">A visual overview of the games I have worked on.</p>
   </section>
 
-  <!-- Grade completa de projetos com filtros -->
-  <section class="projects-section">
-    <div class="section-header">
-      <div class="filter-bar">
-        <button class="filter-btn active" data-filter="all">Todos</button>
-        <button class="filter-btn" data-filter="mobile">Mobile</button>
-        <button class="filter-btn" data-filter="pc">PC</button>
-        <button class="filter-btn" data-filter="serious">Serious Games</button>
+  <div class="proj-tabs">
+    <a href="#entertainment" class="filter-btn" data-i18n="proj.tab.ent">Entertainment</a>
+    <a href="#serious" class="filter-btn" data-i18n="proj.tab.serious">Serious Games</a>
+  </div>
+
+  <!-- =====================================================
+       ENTERTAINMENT
+       ===================================================== -->
+  <section class="proj-section" id="entertainment">
+    <div class="proj-head">
+      <h2><i class="fas fa-gamepad"></i> <span data-i18n="proj.ent.title">Entertainment Games</span></h2>
+      <p data-i18n="proj.ent.sub">Games made to be played for fun.</p>
+    </div>
+
+    <!-- Time To Kill -->
+    <article class="proj-block">
+      <div class="proj-block-head">
+        <div class="txt">
+          <h4>Time To Kill! <span class="tag">PC</span><span class="tag">Unity</span><span class="tag">Multiplayer</span></h4>
+          <p data-i18n="proj.ttk.desc">Arena shooter developed as my graduation project.</p>
+        </div>
+        <a href="https://nulltetz.itch.io/time-to-kill" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="fa-brands fa-itch-io"></i> <span data-i18n="proj.ttk.play">Play on itch.io</span>
+        </a>
+      </div>
+      <div class="gallery">
+        <figure class="media lg" style="--ar:1660/933" data-kind="image" data-full="assets/media/entertainment/ttk-cover.jpg" data-alt="Time To Kill!">
+          <img src="assets/media/entertainment/ttk-cover.jpg" alt="Time To Kill! cover" loading="lazy" />
+        </figure>
+        <figure class="media lg" style="--ar:1600/893" data-kind="image" data-full="assets/media/entertainment/ttk-gameplay1.jpg" data-alt="Time To Kill! gameplay">
+          <img src="assets/media/entertainment/ttk-gameplay1.jpg" alt="Time To Kill! gameplay" loading="lazy" />
+        </figure>
+        <figure class="media" style="--ar:1596/893" data-kind="image" data-full="assets/media/entertainment/ttk-gameplay2.jpg" data-alt="Time To Kill! gameplay">
+          <img src="assets/media/entertainment/ttk-gameplay2.jpg" alt="Time To Kill! gameplay" loading="lazy" />
+        </figure>
+        <figure class="media" style="--ar:1596/892" data-kind="image" data-full="assets/media/entertainment/ttk-gameplay3.jpg" data-alt="Time To Kill! gameplay">
+          <img src="assets/media/entertainment/ttk-gameplay3.jpg" alt="Time To Kill! gameplay" loading="lazy" />
+        </figure>
+        <figure class="media" style="--ar:1709/959" data-kind="image" data-full="assets/media/entertainment/ttk-scenario1.jpg" data-alt="Time To Kill! scenario">
+          <img src="assets/media/entertainment/ttk-scenario1.jpg" alt="Time To Kill! scenario" loading="lazy" />
+        </figure>
+        <figure class="media" style="--ar:1707/957" data-kind="image" data-full="assets/media/entertainment/ttk-scenario2.jpg" data-alt="Time To Kill! scenario">
+          <img src="assets/media/entertainment/ttk-scenario2.jpg" alt="Time To Kill! scenario" loading="lazy" />
+        </figure>
+        <figure class="media" style="--ar:1707/959" data-kind="image" data-full="assets/media/entertainment/ttk-scenario3.jpg" data-alt="Time To Kill! scenario">
+          <img src="assets/media/entertainment/ttk-scenario3.jpg" alt="Time To Kill! scenario" loading="lazy" />
+        </figure>
+      </div>
+    </article>
+
+    <!-- Past Dreams -->
+    <article class="proj-block">
+      <div class="proj-block-head">
+        <div class="txt">
+          <h4>Past Dreams <span class="tag">Mobile</span><span class="tag">Unity</span><span class="tag">Google Play</span></h4>
+          <p data-i18n="proj.pd.desc">Mobile game published on Google Play.</p>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.KSToTal.PastDream" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="fa-brands fa-google-play"></i> <span data-i18n="proj.pd.play">Get it on Google Play</span>
+        </a>
+      </div>
+      <div class="gallery">
+        <figure class="media lg" style="--ar:738/1312" data-kind="image" data-full="assets/media/entertainment/pastdream1.jpg" data-alt="Past Dreams gameplay">
+          <img src="assets/media/entertainment/pastdream1.jpg" alt="Past Dreams gameplay" loading="lazy" />
+        </figure>
+      </div>
+    </article>
+  </section>
+
+  <!-- =====================================================
+       SERIOUS GAMES
+       ===================================================== -->
+  <section class="proj-section" id="serious">
+    <div class="proj-head">
+      <h2><i class="fas fa-graduation-cap"></i> <span data-i18n="proj.serious.title">Serious Games</span></h2>
+      <p data-i18n="proj.serious.sub">Games created with a purpose beyond fun.</p>
+    </div>
+
+    <!-- Education -->
+    <div class="sub-head" id="education" style="border-top:none; margin-top:0; padding-top:0;">
+      <h3><i class="fas fa-book-open"></i> <span data-i18n="proj.edu.title">Education</span></h3>
+      <p data-i18n="proj.edu.sub">Playful learning for kids and interactive science experiences.</p>
+    </div>
+    <div class="work-grid">
+      <article class="work">
+        <figure class="media" style="--ar:733/504" data-kind="image" data-full="assets/media/events/minigame-kids.jpg" data-alt="Viagem Maluca">
+          <img src="assets/media/events/minigame-kids.jpg" alt="Viagem Maluca" loading="lazy" />
+        </figure>
+        <h4 data-i18n="proj.kids.title">Viagem Maluca</h4>
+        <p data-i18n="proj.kids.desc">Educational mini-game for kids.</p>
+      </article>
+      <article class="work">
+        <figure class="media" style="--ar:691/1280" data-kind="image" data-full="assets/media/events/ar-project.jpg" data-alt="AR experiment">
+          <img src="assets/media/events/ar-project.jpg" alt="Augmented reality electric circuit" loading="lazy" />
+        </figure>
+        <h4 data-i18n="proj.ar.title">Augmented Reality Experiment</h4>
+        <p data-i18n="proj.ar.desc">Web AR experience.</p>
+      </article>
+    </div>
+
+    <!-- Corporate -->
+    <div class="sub-head" id="corporate">
+      <h3><i class="fas fa-building"></i> <span data-i18n="proj.corp.title">Corporate Training</span></h3>
+      <p data-i18n="proj.corp.sub">Immersive training experiences.</p>
+    </div>
+    <article class="proj-block">
+      <div class="proj-block-head">
+        <div class="txt">
+          <h4><span data-i18n="proj.3c.title">Safe Driving Training</span> <span class="tag">PC</span><span class="tag">Unity</span><span class="tag">Serious Game</span></h4>
+          <p data-i18n="proj.3c.desc">Training game for a company.</p>
+        </div>
+      </div>
+      <div class="gallery">
+        <figure class="media" style="--ar:1040/578" data-kind="image" data-full="assets/media/corporate/3coracoes1.jpg" data-alt="Corporate training game">
+          <img src="assets/media/corporate/3coracoes1.jpg" alt="Corporate training game" loading="lazy" />
+        </figure>
+        <figure class="media" style="--ar:1040/580" data-kind="image" data-full="assets/media/corporate/3coracoes2.jpg" data-alt="Corporate training game">
+          <img src="assets/media/corporate/3coracoes2.jpg" alt="Corporate training game" loading="lazy" />
+        </figure>
+        <figure class="media" style="--ar:1039/577" data-kind="image" data-full="assets/media/corporate/3coracoes3.jpg" data-alt="Corporate training game">
+          <img src="assets/media/corporate/3coracoes3.jpg" alt="Corporate training game" loading="lazy" />
+        </figure>
+        <figure class="media" style="--ar:1039/578" data-kind="image" data-full="assets/media/corporate/3coracoes4.jpg" data-alt="Corporate training game">
+          <img src="assets/media/corporate/3coracoes4.jpg" alt="Corporate training game" loading="lazy" />
+        </figure>
+      </div>
+    </article>
+
+    <!-- Events -->
+    <div class="sub-head" id="events">
+      <h3><i class="fas fa-bullhorn"></i> <span data-i18n="proj.events.title">Events &amp; Activations</span></h3>
+      <p data-i18n="proj.events.sub">Touch-screen games and quizzes played by visitors.</p>
+    </div>
+
+    <article class="proj-block">
+      <div class="proj-block-head">
+        <div class="txt">
+          <h4 data-i18n="proj.totem.title">Interactive Totems</h4>
+          <p data-i18n="proj.totem.desc">Games running on totems at real events.</p>
+        </div>
+      </div>
+      <div class="gallery">
+        <figure class="media" style="--ar:368/816" data-kind="video" data-full="assets/media/events/totem-2.mp4" data-alt="Interactive totem">
+          <img src="assets/media/posters/totem-2.jpg" alt="Interactive totem at an event" loading="lazy" />
+          <span class="play"><i class="fas fa-play"></i></span>
+        </figure>
+        <figure class="media" style="--ar:464/832" data-kind="video" data-full="assets/media/events/totem-3.mp4" data-alt="Interactive totem">
+          <img src="assets/media/posters/totem-3.jpg" alt="Interactive totem game" loading="lazy" />
+          <span class="play"><i class="fas fa-play"></i></span>
+        </figure>
+        <figure class="media" style="--ar:480/848" data-kind="video" data-full="assets/media/events/totem-governador.mp4" data-alt="Interactive totem">
+          <img src="assets/media/posters/totem-governador.jpg" alt="Visitor playing the totem game" loading="lazy" />
+          <span class="play"><i class="fas fa-play"></i></span>
+        </figure>
+      </div>
+    </article>
+
+    <div class="work-grid">
+      <article class="work">
+        <figure class="media" style="--ar:1024/576" data-kind="video" data-full="assets/media/events/game-carro.mp4" data-alt="Viva Minas racing game">
+          <img src="assets/media/posters/game-carro.jpg" alt="Viva Minas racing game" loading="lazy" />
+          <span class="play"><i class="fas fa-play"></i></span>
+        </figure>
+        <h4 data-i18n="proj.vm.title">Viva Minas – Racing Game</h4>
+        <p data-i18n="proj.vm.desc">Driving game made for an institutional event.</p>
+      </article>
+      <article class="work">
+        <figure class="media" style="--ar:464/832" data-kind="video" data-full="assets/media/events/sesc-pontos.mp4" data-alt="Find the points challenge">
+          <img src="assets/media/posters/sesc-pontos.jpg" alt="Find the points challenge" loading="lazy" />
+          <span class="play"><i class="fas fa-play"></i></span>
+        </figure>
+        <h4 data-i18n="proj.sesc.title">Find the Points Challenge</h4>
+        <p data-i18n="proj.sesc.desc">Quick challenge.</p>
+      </article>
+      <article class="work">
+        <figure class="media" style="--ar:832/464" data-kind="video" data-full="assets/media/events/quiz-termometro.mp4" data-alt="Integrity thermometer quiz">
+          <img src="assets/media/posters/quiz-termometro.jpg" alt="Integrity thermometer quiz" loading="lazy" />
+          <span class="play"><i class="fas fa-play"></i></span>
+        </figure>
+        <h4 data-i18n="proj.quiz.title">Integrity Thermometer Quiz</h4>
+        <p data-i18n="proj.quiz.desc">Light-hearted quiz.</p>
+      </article>
+      <article class="work">
+        <figure class="media" style="--ar:270/480" data-kind="video" data-loop data-full="assets/media/events/poupancudos.mp4" data-alt="Poupançudos">
+          <video muted loop playsinline preload="metadata" data-autoplay poster="assets/media/posters/poupancudos.jpg">
+            <source src="assets/media/events/poupancudos.mp4" type="video/mp4" />
+          </video>
+        </figure>
+        <h4 data-i18n="proj.caixa.title">Poupançudos – Drag &amp; Drop</h4>
+        <p data-i18n="proj.caixa.desc">Drag-and-drop financial education game.</p>
+      </article>
+      <article class="work">
+        <figure class="media" style="--ar:270/480" data-kind="video" data-loop data-full="assets/media/events/detran-riskcrush.mp4" data-alt="Risk Crush">
+          <video muted loop playsinline preload="metadata" data-autoplay poster="assets/media/posters/detran-riskcrush.jpg">
+            <source src="assets/media/events/detran-riskcrush.mp4" type="video/mp4" />
+          </video>
+        </figure>
+        <h4 data-i18n="proj.detran.title">Risk Crush</h4>
+        <p data-i18n="proj.detran.desc">Match-style game about traffic awareness.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 data-i18n="proj.cta.title">Like what you see?</h2>
+      <p data-i18n="proj.cta.desc">Let us talk about your next project.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="home.cta.contact">Get in Touch</a>
       </div>
     </div>
-
-    <div class="projects-grid" id="projectsGrid">
-
-      <!-- Card Past Dreams -->
-      <article class="project-card" data-category="mobile">
-        <div class="card-media">
-          <img src="assets/images/project1-thumb.jpg" alt="Past Dreams" />
-          <div class="card-hover-overlay">
-            <a href="project.html?id=1" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <h3 class="card-title">Past Dreams</h3>
-            <span class="card-category">Mobile</span>
-          </div>
-          <p class="card-desc">Jogo mobile disponível na Google Play com narrativa e mecânicas imersivas.</p>
-          <div class="card-tech">
-            <span class="tech-tag">Unity</span>
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">Google Play</span>
-          </div>
-          <div class="card-footer">
-            <a href="project.html?id=1" class="btn btn-sm btn-primary">Detalhes</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card Time To Kill! -->
-      <article class="project-card" data-category="pc">
-        <div class="card-media">
-          <img src="assets/images/project2-thumb.jpg" alt="Time To Kill! (Arena Shooter)" />
-          <div class="card-hover-overlay">
-            <a href="project.html?id=2" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <h3 class="card-title">Time To Kill! (Arena Shooter)</h3>
-            <span class="card-category">PC</span>
-          </div>
-          <p class="card-desc">Arena shooter em ritmo rápido com sistemas de movimentação dinâmica e combate.</p>
-          <div class="card-tech">
-            <span class="tech-tag">Unity 3D</span>
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">Gameplay</span>
-          </div>
-          <div class="card-footer">
-            <a href="project.html?id=2" class="btn btn-sm btn-primary">Detalhes</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card Company Training Game -->
-      <article class="project-card" data-category="serious">
-        <div class="card-media">
-          <img src="assets/images/project3-thumb.jpg" alt="Company Training Game" />
-          <div class="card-hover-overlay">
-            <a href="project.html?id=3" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <h3 class="card-title">Company Training Game</h3>
-            <span class="card-category">Serious Games</span>
-          </div>
-          <p class="card-desc">Simulação corporativa interativa gamificada para treinamento em PC e Mobile.</p>
-          <div class="card-tech">
-            <span class="tech-tag">Unity</span>
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">Multiplataforma</span>
-          </div>
-          <div class="card-footer">
-            <a href="project.html?id=3" class="btn btn-sm btn-primary">Detalhes</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card Mini-Games for kids -->
-      <article class="project-card" data-category="mobile">
-        <div class="card-media">
-          <img src="assets/images/project4-thumb.jpg" alt="Mini-Games for kids" />
-          <div class="card-hover-overlay">
-            <a href="project.html?id=4" class="card-view-btn">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-header-row">
-            <h3 class="card-title">Mini-Games for kids</h3>
-            <span class="card-category">Mobile</span>
-          </div>
-          <p class="card-desc">Coleção de minigames infantis educativos com foco em usabilidade e diversão.</p>
-          <div class="card-tech">
-            <span class="tech-tag">Unity</span>
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">UI / Touch</span>
-          </div>
-          <div class="card-footer">
-            <a href="project.html?id=4" class="btn btn-sm btn-primary">Detalhes</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
   </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" data-i18n-attr="aria-label:lb.close" aria-label="Close"><i class="fas fa-times"></i></button>
+    <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+    <div id="lightboxMedia"></div>
+    <button class="lightbox-nav next" id="lightboxNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+  </div>
 
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
         <a href="index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>Luan Procópio<span class="logo-bracket">/&gt;</span></a>
-        <p>Game Programmer apaixonado por criar experiências digitais incríveis.</p>
+        <p data-i18n="footer.tagline">Game programmer passionate about building memorable interactive experiences.</p>
       </div>
       <div class="footer-links">
-        <h4>Navegação</h4>
+        <h4 data-i18n="footer.nav">Navigation</h4>
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projects.html">Projetos</a></li>
-          <li><a href="about.html">Sobre Mim</a></li>
-          <li><a href="contact.html">Contato</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-social">
-        <h4>Redes & Links</h4>
+        <h4 data-i18n="footer.links">Links</h4>
         <div class="social-links">
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://itch.io" target="_blank" aria-label="Itch.io"><i class="fa-brands fa-itch-io"></i></a>
-          <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://nulltetz.itch.io" target="_blank" rel="noopener" aria-label="Itch.io"><i class="fa-brands fa-itch-io"></i></a>
+          <a href="https://github.com/laap07" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
           <a href="mailto:luanprocopio@hotmail.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Luan A Procópio · Game Programmer.</p>
+      <p>&copy; 2025 <span data-i18n="footer.rights">Luan A Procópio · Game Programmer.</span></p>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
