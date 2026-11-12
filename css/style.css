@@ -1171,3 +1171,6 @@ ul { list-style: none; }
 .work-grid .media { width: 100%; height: auto; }
 .work h4 { font-size: 1.05rem; font-weight: 700; margin: 12px 0 2px; }
 .work p { color: var(--text-secondary); font-size: 0.88rem; }
+
+.slide-overlay { padding: 48px 84px; }
+@media (max-width: 768px) { .slide-overlay { padding: 24px 56px; } }

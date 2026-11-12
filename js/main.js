@@ -1,6 +1,6 @@
-﻿// =============================================
+// =============================================
 // PORTFOLIO - MAIN JAVASCRIPT
-// Luan A ProcÃ³pio Â· Game Programmer
+// Luan A Procópio · Game Programmer
 // =============================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(c => observer.observe(c));
   }
 
-  // ---- LIGHTBOX (images + videos, navegaÃ§Ã£o dentro da galeria) ----
+  // ---- LIGHTBOX (images + videos, navegação dentro da galeria) ----
   const lightbox      = document.getElementById('lightbox');
   const lightboxMedia = document.getElementById('lightboxMedia');
   const lightboxClose = document.getElementById('lightboxClose');
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') stepLightbox(1);
   });
 
-  // ---- VÃDEOS EM LOOP (estilo GIF): sÃ³ tocam quando visÃ­veis ----
+  // ---- VÍDEOS EM LOOP (estilo GIF): só tocam quando visíveis ----
   const loopVideos = document.querySelectorAll('video[data-autoplay]');
   if (loopVideos.length > 0) {
     const vObs = new IntersectionObserver(entries => {
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loopVideos.forEach(v => vObs.observe(v));
   }
 
-  // ---- FORMULÃRIO DE CONTATO (envia para o e-mail via FormSubmit) ----
+  // ---- FORMULÁRIO DE CONTATO (envia para o e-mail via FormSubmit) ----
   const form    = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
   const errorEl = document.getElementById('formError');
