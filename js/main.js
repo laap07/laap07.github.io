@@ -81,11 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!entry.isIntersecting) return;
         const el     = entry.target;
         const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
         const step   = Math.max(1, Math.ceil(target / 40));
         let count    = 0;
         const timer  = setInterval(() => {
           count = Math.min(count + step, target);
-          el.textContent = count;
+          el.textContent = count + suffix;
           if (count >= target) clearInterval(timer);
         }, 35);
         observer.unobserve(el);
